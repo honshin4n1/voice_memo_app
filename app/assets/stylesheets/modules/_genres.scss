@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+.main-body {
+  height: calc(100vh - 30%);
+  width: 80%;
+  background-color: skyblue;
+  margin: 100px auto;
+  padding: 30px 0;
+  .btns {
+    height: 70px;
+    width: 100px;
+    margin: 50px auto;
+    border: 1px solid gray;
+    &__new-memo {
+      display: block;
+      height: 100%;
+      width: 100%;
+      color: black;
+      text-decoration: none;
+      font-size: large;
+      line-height: 70px;
+      padding-left: 30px;
+    }
+    &__add-contents {
+      display: block;
+      height: 100%;
+      width: 100%;
+      color: black;
+      text-decoration: none;
+      font-size: large;
+      line-height: 70px;
+      padding-left: 30px;
+    }
+    &__search {
+      display: block;
+      height: 100%;
+      width: 100%;
+      color: black;
+      text-decoration: none;
+      font-size: large;
+      line-height: 70px;
+      padding-left: 30px;
+    }
+
+  }
+  
+}
