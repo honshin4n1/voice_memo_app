@@ -6,7 +6,7 @@
   height: 80px;
   width: 100vw;
   line-height: 80px;
-  background-color: #97D1E4;
+  background-color: #EEE8AA;
   display: flex;
   justify-content: space-evenly;
   &__title {
@@ -34,7 +34,7 @@
 .main-body {
   height: calc(100vh - 80px);
   width: 70%;
-  background-color:gray;
+  background-color:#CCCCCC;
   margin: 0 auto;
   padding: 30px 0;
   .btns {
