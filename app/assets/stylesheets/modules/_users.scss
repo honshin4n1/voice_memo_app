@@ -2,17 +2,47 @@
   box-sizing: border-box;
 }
 
+.header {
+  height: 80px;
+  width: 100vw;
+  line-height: 80px;
+  background-color: #97D1E4;
+  display: flex;
+  justify-content: space-evenly;
+  &__title {
+    width: 30%;
+    font-size: 40px;
+    color: #473838;
+  }
+  &__btns {
+    width: 15%;
+    display: flex;
+    &--signup {
+      display: block;
+      color: #473838;
+      text-decoration: none;
+    }
+    &--login {
+      display: block;
+      color: #473838;
+      text-decoration: none;
+      padding-left: 30px;
+    }
+  }
+}
+
 .main-body {
-  height: calc(100vh - 30%);
-  width: 80%;
-  background-color: skyblue;
-  margin: 100px auto;
+  height: calc(100vh - 80px);
+  width: 70%;
+  background-color:gray;
+  margin: 0 auto;
   padding: 30px 0;
   .btns {
     height: 70px;
     width: 100px;
     margin: 50px auto;
-    border: 1px solid gray;
+    border: 1px solid black;
+    background-color: #f3f3f3;
     &__new-memo {
       display: block;
       height: 100%;
