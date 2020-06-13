@@ -8,9 +8,9 @@ Rails.application.routes.draw do
      sessions: 'users/sessions'
    }
  
-  resource :user do
-    resources :genres, only: [:index, :new, :create]
+  resources :users, only: [:index,:edit, :update]
+  resources :genres, only: [:index, :new, :create, :update] do
+    resources :contents, only: [:index, :new, :create, :update]
   end
-
-
+  
 end

@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper{
+  min-height: 100vh;
+}
+
+.header {
+  height: 80px;
+  width: 100vw;
+  line-height: 80px;
+  background-color: #EEE8AA;
+  display: flex;
+  justify-content: space-evenly;
+  &__title {
+    width: 30%;
+    font-size: 40px;
+    color: #473838;
+  }
+  &__btns {
+    width: 15%;
+    display: flex;
+    &--signup {
+      display: block;
+      color: #473838;
+      text-decoration: none;
+    }
+    &--login {
+      display: block;
+      color: #473838;
+      text-decoration: none;
+      padding-left: 30px;
+    }
+  }
+}
+
+.side-bar {
+  height: calc(100vh - 80px);
+  width: 20%;
+  float: left;
+  background-color: gray;
+  overflow: scroll;
+  .genre__name {
+    height: 30px;
+    width: 100%;
+    margin: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    &__list {
+      text-decoration: none;
+      color: black;
+      
+    }
+  }
+}
+
+
+.main-body {
+  height: calc(100vh - 80px);
+  width: 80%;
+  float: right;
+  overflow: scroll;
+
+  .form-box {
+    height: 10%;
+    width: 80%;
+    margin: 100px;
+    
+    &__genre__name {
+      display: block;
+      margin-bottom: 20px;
+    }
+    &__contents__title {
+      display: block;
+      margin-bottom: 20px;
+    }
+    &__contents__comment {
+      display: block;
+      width: 60%;
+      margin-bottom: 20px;
+    }
+    &__new-memo {
+      cursor: pointer;
+    }
+  }
+  .contents {
+    height: 70%;
+    // background-color: blanchedalmond;
+    .content {
+      width: 100%;
+      padding: 10px 50px 40px 50px;
+      
+      &__info {
+        display: flex;
+        &__title {
+          height: 50px;
+          line-height: 50px;
+          font-size: 20px;
+        }
+        &__date {
+          height: 50px;
+          line-height: 50px;
+          padding-left: 30px;
+        }
+      }
+      &__comment {
+        height: 50px;
+        line-height: 50px;
+        font-size: 20px;
+      }
+    }
+  }
+
+}
+
+
+
+#start-btn {
+  cursor: pointer;
+}
+
+// .footer {
+//   height: 50px;
+//   width: 100%;
+//   border: solid 1px grey;
+//   position: absolute;/*←絶対位置*/
+//   bottom: 0; /*下に固定*/
+//   padding-top: 80px;
+
+// }

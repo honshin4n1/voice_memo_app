@@ -1,0 +1,19 @@
+.main-body
+  .form-box
+    %button#start-btn
+      start
+    = form_for [@genre, @content] do |f|
+      = f.text_field :title, class: 'form-box__contents__title', placeholder: 'タイトル'
+      = f.text_field :comment, class: 'form-box__contents__comment', placeholder: 'コメント'
+      = f.submit '追加', class: 'form-box__new-memo'
+
+  .contents
+    .content
+      - @genre.contents.each do |content|
+        .content__info
+          .content__info__title
+            = content.title
+      -#     .content__info__date
+      -#       = content.
+      -# .content__comment
+      -#   面白い

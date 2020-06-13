@@ -1,0 +1,34 @@
+.main-body
+  .form-box
+    %button#start-btn
+      start
+    = form_for @genre do |f|
+      = f.text_field :name, class: 'form-box__genre__name', id: 'genre__name', placeholder: 'ジャンル'
+    
+      = f.fields_for :contents do |c|
+        = c.text_field :title, class: 'form-box__contents__title', placeholder: 'タイトル'
+    
+        = c.text_field :comment, class: 'form-box__contents__comment', placeholder: 'コメント'
+      = f.submit '登録', class: 'form-box__new-memo'
+
+
+
+
+  -# .form-box
+  -#   = form_for @genre do |f|
+  -#     = f.text_field :name, class: 'form-box__genre__name', placeholder: 'ジャンル'
+  -#     = f.fields_for :contents do |c|
+  -#       = c.text_field :title, class: 'form-box__contents__title', placeholder: 'タイトル'
+  -#       = c.text_field :comment, class: 'form-box__contents__comment', placeholder: 'コメント'
+  -#     = f.submit '追加', class: 'form-box__new-memo'
+
+
+  -# .form-box
+  -#   = form_for @genre do |f|
+  -#     = f.text_field :name, class: 'form-box__genre__name', placeholder: 'ジャンル'
+  -#     = f.fields_for :contents do |c|
+  -#       = c.text_field :title, class: 'form-box__contents__title', placeholder: 'タイトル'
+  -#       = c.text_field :comment, class: 'form-box__contents__comment', placeholder: 'コメント'
+  -#     = f.submit '検索', class: 'form-box__new-memo'
+
+  
