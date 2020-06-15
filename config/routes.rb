@@ -7,10 +7,13 @@ Rails.application.routes.draw do
    devise_for :users, :controllers => {
      sessions: 'users/sessions'
    }
- 
-  resources :users, only: [:index,:edit, :update]
-  resources :genres, only: [:index, :new, :create, :update] do
-    resources :contents, only: [:index, :new, :create, :update]
+   
+   resources :users, only: [:show] do
+    namespace :contents do
+      resources :searches, only: :index
+    end
+    resources :genres, only: [:index, :new, :create, :update] do
+      resources :contents, only: [:index, :new, :create, :update]
+    end
   end
-  
 end

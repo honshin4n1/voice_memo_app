@@ -16,10 +16,12 @@ ActiveRecord::Schema.define(version: 20200610055801) do
     t.string   "title",      null: false
     t.string   "comment"
     t.integer  "genre_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["genre_id"], name: "index_contents_on_genre_id", using: :btree
     t.index ["title"], name: "index_contents_on_title", using: :btree
+    t.index ["user_id"], name: "index_contents_on_user_id", using: :btree
   end
 
   create_table "genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -46,5 +48,6 @@ ActiveRecord::Schema.define(version: 20200610055801) do
   end
 
   add_foreign_key "contents", "genres"
+  add_foreign_key "contents", "users"
   add_foreign_key "genres", "users"
 end

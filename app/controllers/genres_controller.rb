@@ -1,10 +1,8 @@
 class GenresController < ApplicationController
-  # before_action :find_genre
+  before_action :set_user
   def index
     @genre = Genre.new
-    @genre.contents.build
     @genres = Genre.all
-    
   end
   
   def new
@@ -14,7 +12,7 @@ class GenresController < ApplicationController
   def create
     @genre = Genre.new(genre_params)
     if @genre.save
-      redirect_to genres_path
+      redirect_to user_genres_path
     else 
       render :index
     end
@@ -27,11 +25,11 @@ class GenresController < ApplicationController
   private
 
   def genre_params
-    params.require(:genre).permit(:name, contents_attributes: [:title, :comment, :id]).merge(user_id: current_user.id)
+    params.require(:genre).permit(:name).merge(user_id: current_user.id)
   end
 
-  # def find_genre
-  #   @genre = Genre.find(params[:genre_id])
-  # end
+  def set_user
+    @user = User.find(params[:user_id])
+  end
 
 end

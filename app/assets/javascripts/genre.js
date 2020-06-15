@@ -1,27 +1,27 @@
-let speech = new webkitSpeechRecognition();
-    speech.lang = 'ja-JP';
+window.addEventListener('DOMContentLoaded', function() {
+    const speech = new webkitSpeechRecognition();
+        speech.lang = 'ja-JP';
+        // document.getElementById や addEventListener
+        const Start = document.getElementById('start-btn');
+        const Result = document.getElementById('genre__name');
 
-    let start = document.getElementById("start-btn");
-    let content = document.getElementById("genre__name");
-
-    start.addEventListener('click', function () {
+        speech.addEventListener('result', function (e) {
+            var text = '';
         
-        // 音声認識をスタート
-        speech.start();
-    });
+            for (var i = 0; i < e.results.length; i++) {
+                text += e.results[i][0].transcript;
+            }
+            Result.value = text;
+        }, false);
 
-    //音声自動文字起こし機能
-    speech.onresult = function (e) {
-        speech.stop();
-        if (e.results[0].isFinal) {
-            let autotext = e.results[0][0].transcript
-            content.innerHTML += '<div>' + autotext + '</div>';
-        }
-    }
+        Start.addEventListener('click', function () {
+            Result.value = '';
+            speech.start();
+        }, false);
+    
+    
 
-    speech.onend = () =>
-    {
-        speech.start()
-    };
 
+        
+},false);
 

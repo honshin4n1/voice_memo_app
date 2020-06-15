@@ -13,10 +13,30 @@
   background-color: #EEE8AA;
   display: flex;
   justify-content: space-evenly;
+  &__search {
+    height: 40px;
+    width: 80px;
+    border: solid 1px black;
+    margin-top: 20px;
+    background-color: #f3f3f3;
+    &__btn {
+      display: block;
+      line-height: 40px;
+      padding-left: 20px;
+      font-size: 18px;
+      color: black;
+      text-decoration: none;
+    }
+  }
   &__title {
     width: 30%;
-    font-size: 40px;
+    font-size: 45px;
+    font-family: 'arial black';
     color: #473838;
+    &__link {
+      text-decoration: none;
+      color: black;
+    }
   }
   &__btns {
     width: 15%;
@@ -39,14 +59,15 @@
   height: calc(100vh - 80px);
   width: 20%;
   float: left;
-  background-color: gray;
+  background-color: #DCDCDC;
   overflow: scroll;
   .genre__name {
     height: 30px;
     width: 100%;
     margin: 30px;
     line-height: 30px;
-    font-size: 20px;
+    font-size: 25px;
+    font-family: 'arial unicode ms';
     &__list {
       text-decoration: none;
       color: black;
@@ -61,11 +82,18 @@
   width: 80%;
   float: right;
   overflow: scroll;
+  .explanation-text {
+    margin: 50px 80px;
+    color: red;
+  }
 
   .form-box {
     height: 10%;
     width: 80%;
-    margin: 100px;
+    margin: 50px 100px 100px 100px;
+    #title-btn {
+      margin-bottom: 10px;
+    }
     
     &__genre__name {
       display: block;
@@ -86,28 +114,31 @@
   }
   .contents {
     height: 70%;
-    // background-color: blanchedalmond;
+    padding-top: 50px;
     .content {
       width: 100%;
       padding: 10px 50px 40px 50px;
+      
       
       &__info {
         display: flex;
         &__title {
           height: 50px;
           line-height: 50px;
-          font-size: 20px;
+          font-size: 18px;
         }
         &__date {
           height: 50px;
           line-height: 50px;
           padding-left: 30px;
+          font-size: 14px;
+          font-family: 'Tahoma';
         }
       }
       &__comment {
         height: 50px;
         line-height: 50px;
-        font-size: 20px;
+        font-size: 18px;
       }
     }
   }
@@ -116,7 +147,8 @@
 
 
 
-#start-btn {
+button {
+  margin-bottom: 10px;
   cursor: pointer;
 }
 
