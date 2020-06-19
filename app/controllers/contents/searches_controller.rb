@@ -2,7 +2,7 @@ class Contents::SearchesController < ApplicationController
   before_action :set_user
 
   def index
-    @contents = @user.contents.search(params[:keyword], current_user.id)
+    @contents = @user.contents.search(params[:keyword])
   end
 
 
