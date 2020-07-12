@@ -1,8 +1,9 @@
 class Contents::SearchesController < ApplicationController
-  before_action :set_user
+  # before_action :set_user
 
   def index
-    @contents = @user.contents.search(params[:keyword])
+    # binding.pry
+    @contents = Content.search(params[:keyword])
   end
 
 
@@ -10,6 +11,6 @@ class Contents::SearchesController < ApplicationController
   private
 
   def set_user
-    @user = User.find(params[:user_id])
+    @user = User.find(params[:id])
   end
 end

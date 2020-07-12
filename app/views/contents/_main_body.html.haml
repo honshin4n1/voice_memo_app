@@ -6,9 +6,8 @@
       タイトルstart
     %button#comment-btn
       コメントstart
-    = form_for [@genre, @content], url: {controller: 'contents', action: 'index'} do |f|
+    = form_for [@genre, @content] do |f|
       = f.text_field :title, class: 'form-box__contents__title', id: 'contents__title', placeholder: 'タイトル'
-      
       = f.text_field :comment, class: 'form-box__contents__comment', id: 'contents__comment', placeholder: 'コメント'
       = f.submit '登録', class: 'form-box__new-memo'
 

@@ -1,8 +1,10 @@
 .side-bar
-  - current_user.genres.each do |genre|
-    .genre__name
-      = link_to user_genre_contents_path(current_user.id, genre), class: 'genre__name__list' do
-        = genre.name
+  - if user_signed_in?
+    - @genres.each do |genre|
+      .genre__name
+        = link_to genre_contents_path(genre), class: 'genre__name__list' do
+          = genre.name
+  - else
 
      
   

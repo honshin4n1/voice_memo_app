@@ -1,12 +1,30 @@
 .main-body
-  .explanation-text
-    ＊音声入力するにはstartボタンを押してください＊
-  .form-box
-    %button#start-btn
-      start
-    = form_for @genre, url: {controller: 'genres', action: 'index'} do |f|
-      = f.text_field :name, class: 'form-box__genre__name', id: 'genre__name', placeholder: 'ジャンル'
-      = f.submit '登録', class: 'form-box__new-memo'
+  - if user_signed_in?
+    .explanation-text
+      ＊音声入力するにはstartボタンを押してください＊
+      %button#genre-btn
+        ジャンルstart
+    .form-box
+      = form_for @genre do |f|
+        = f.text_field :name, class: 'form-box__genre__name', id: 'genre__name', placeholder: 'ジャンル'
+        = f.submit '登録', class: 'form-box__new-memo'
+  - else
+    .explanation-text
+      ＊新規登録またはログインしてください＊
+
+
+  -# .form-box
+  -#   = form_for @genre do |f|
+  -#     = f.text_field :name, class: 'form-box__genre__name', placeholder: 'ジャンル'
+  -#     = f.fields_for :contents do |c|
+  -#       = c.text_field :title, class: 'form-box__contents__title', placeholder: 'タイトル'
+  -#       = c.text_field :comment, class: 'form-box__contents__comment', placeholder: 'コメント'
+  -#     = f.submit '登録', class: 'form-box__new-memo'
+
+
+
+
+
 
 
 

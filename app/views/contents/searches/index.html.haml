@@ -1,6 +1,6 @@
 .header
   .header__title
-    = link_to user_genres_path(current_user.id), class: "header__title__link" do
+    = link_to root_path, class: "header__title__link" do
       Voice Memo
   .header__btns
     - if user_signed_in?
@@ -18,7 +18,7 @@
   .form-box
     %button#start-btn
       start
-    = form_for user_contents_searches_path, local: true, method: :get, class: "search-form" do |f|
+    = form_for contents_searches_path, local: true, method: :get, class: "search-form" do |f|
       = f.text_field :keyword, class: 'form-box__contents__title', id: 'genre__name', placeholder: 'タイトル検索'
       = f.submit '検索', class: 'form-box__new-memo'
 

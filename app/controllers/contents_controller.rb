@@ -10,23 +10,23 @@ class ContentsController < ApplicationController
   end
 
   def create
-    @content = @genre.contents.new(content_params)
+    @content = Content.new(content_params)
     if @content.save
-      redirect_to user_genre_contents_path
+      redirect_to genre_contents_path(params[:genre_id])
     else
       render :index
     end
   end
 
   # def search
-  #   @contents = @user.contents.search(params[:keyword])
+  #   @contents = @genre.contents.search(params[:keyword])
   # end
 
 
   private
 
   def content_params
-    params.require(:content).permit(:title, :comment).merge(user_id: current_user.id)
+    params.require(:content).permit(:title, :comment).merge(user_id: current_user.id, genre_id: params[:genre_id])
     
   end
 

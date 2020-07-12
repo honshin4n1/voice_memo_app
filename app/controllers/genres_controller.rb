@@ -1,24 +1,27 @@
 class GenresController < ApplicationController
-  before_action :set_user
+  # before_action :set_content
   def index
+    @genres = current_user&.genres
     @genre = Genre.new
-    @genres = Genre.all
   end
   
-  def new
+  def new 
     
   end
 
   def create
     @genre = Genre.new(genre_params)
     if @genre.save
-      redirect_to user_genres_path
+      redirect_to root_path
     else 
       render :index
     end
   end
 
   def update
+  end
+
+  def show
   end
 
 
@@ -28,8 +31,9 @@ class GenresController < ApplicationController
     params.require(:genre).permit(:name).merge(user_id: current_user.id)
   end
 
-  def set_user
-    @user = User.find(params[:user_id])
+  def set_content
+    @content = Content.find(params[:content_id])
   end
 
 end
+
