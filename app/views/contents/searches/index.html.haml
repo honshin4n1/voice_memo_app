@@ -1,35 +1,24 @@
-.header
-  .header__title
-    = link_to root_path, class: "header__title__link" do
-      Voice Memo
-  .header__btns
-    - if user_signed_in?
-      .header__btns--signup
-        = current_user.name
-      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'header__btns--login' 
-    - else
-      = link_to "新規登録", new_user_registration_path, class: "header__btns--signup" 
-      = link_to "ログイン", new_user_session_path, class: 'header__btns--login' 
-
-.main-body
-  .explanation-text
-    ＊検索機能は只今調整中です。＊
+.wrapper
+  = render "genres/header"
+  .main-body
+    .explanation-text
+      ＊検索機能は只今調整中です。＊
     
-  .form-box
-    %button#start-btn
-      start
-    = form_for contents_searches_path, local: true, method: :get, class: "search-form" do |f|
-      = f.text_field :keyword, class: 'form-box__contents__title', id: 'genre__name', placeholder: 'タイトル検索'
-      = f.submit '検索', class: 'form-box__new-memo'
+    .form-box
+      %button#start-btn
+        start
+      = form_for(@content, url: contents_searches_path, local: true, method: :get, class: "search-form") do |f|
+        = f.text_field :keyword, class: 'form-box__contents__title', id: 'genre__name', placeholder: 'タイトル検索'
+        = f.submit '検索', class: 'form-box__new-memo'
 
-  .contents
-    - @contents.each do |content|
-      .content
-        .content__info
-          .content__info__title
-            = content.title
-          .content__info__date
-            = content.created_at.strftime("%Y/%m/%d (%a) %H:%M")
-            更新
-        .content__comment
-          = content.comment
+    .contents
+      - @contents.each do |content|
+        .content
+          .content__info
+            .content__info__title
+              = content.title
+            .content__info__date
+              = content.created_at.strftime("%Y/%m/%d (%a) %H:%M")
+              更新
+          .content__comment
+            = content.comment

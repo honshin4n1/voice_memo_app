@@ -1,8 +1,9 @@
 class GenresController < ApplicationController
-  # before_action :set_content
+  
   def index
     @genres = current_user&.genres
     @genre = Genre.new
+    @content = Content.new
   end
   
   def new 
@@ -29,10 +30,6 @@ class GenresController < ApplicationController
 
   def genre_params
     params.require(:genre).permit(:name).merge(user_id: current_user.id)
-  end
-
-  def set_content
-    @content = Content.find(params[:content_id])
   end
 
 end
