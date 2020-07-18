@@ -118,6 +118,7 @@
     .content {
       width: 100%;
       padding: 10px 50px 40px 50px;
+      border-top: 1px solid #f3f3f3;
       
       
       &__info {
@@ -142,22 +143,12 @@
       }
     }
   }
-
 }
-
 
 
 button {
   margin-bottom: 10px;
+  color: red;
   cursor: pointer;
 }
-
-// .footer {
-//   height: 50px;
-//   width: 100%;
-//   border: solid 1px grey;
 //   position: absolute;/*←絶対位置*/
-//   bottom: 0; /*下に固定*/
-//   padding-top: 80px;
-
-// }

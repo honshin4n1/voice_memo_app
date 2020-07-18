@@ -3,9 +3,9 @@
     ＊音声入力するにはstartボタンを押してください＊
   .form-box
     %button#title-btn
-      タイトルstart
+      タイト◉ルstart
     %button#comment-btn
-      コメントstart
+      コメント◉start
     = form_for [@genre, @content] do |f|
       = f.text_field :title, class: 'form-box__contents__title', id: 'contents__title', placeholder: 'タイトル'
       = f.text_field :comment, class: 'form-box__contents__comment', id: 'contents__comment', placeholder: 'コメント'
