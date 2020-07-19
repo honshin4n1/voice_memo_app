@@ -4,11 +4,7 @@ class Content < ApplicationRecord
   validates :title, presence: true
   attr_accessor :keyword
 
-  def self.search(search, id)
-    return Content.all unless search
-    search = "%#{search}%"
-    Content.find_by_sql(["select * from contents where title like ? ", search])
-  end
+  default_scope -> { order(created_at: :desc) }
 
   def self.search(search, id)
     return Content.all unless search
