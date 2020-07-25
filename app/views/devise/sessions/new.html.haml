@@ -1,0 +1,22 @@
+.wrapper
+  .header
+    .header__title
+      = link_to root_path, class: "header__title__link" do
+        Voice Memo
+  .signup-content
+    .signup-content__text
+      ログイン
+    .signup-content__form
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field
+          = f.label :email, "メールアドレス"
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+        .field
+          = f.label :password, "パスワード"
+          %br/
+          = f.password_field :password, autocomplete: "current-password"
+        .actions
+          = f.submit "ログイン", class: "session-btn"
+        = link_to new_user_registration_path, class: "session-link" do
+          新規登録はこちら

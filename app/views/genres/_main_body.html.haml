@@ -1,0 +1,21 @@
+.main-body
+  - if user_signed_in?
+    .explanation-text
+      ＊音声入力するにはstartボタンを押してください＊
+    .form-box
+      %button#genre-btn
+        ジャンル◉start
+      = form_for @genre do |f|
+        = f.text_field :name, class: 'form-box__genre__name', id: 'genre__name', placeholder: 'ジャンル'
+        = f.submit '登録', class: 'form-box__new-memo'
+    .form-box
+      %button#search-btn
+        検索◉start
+      = form_for(@content, url: contents_searches_path, local: true, method: :get, class: "search-form") do |f|
+        = f.text_field :keyword, class: 'form-box__contents__title', id: 'search__title', placeholder: 'タイトル検索'
+        = f.submit '検索', class: 'form-box__new-memo'
+  - else
+    .explanation-text
+      ＊新規登録またはログインしてください＊
+
+

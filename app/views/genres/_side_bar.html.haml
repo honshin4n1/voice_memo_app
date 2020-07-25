@@ -1,0 +1,12 @@
+.side-bar
+  - if user_signed_in?
+    - @genres.each do |genre|
+      .genre__name
+        = link_to genre_contents_path(genre), class: 'genre__name__list' do
+          = genre.name
+  - else
+
+     
+  
+  
+  
