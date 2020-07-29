@@ -4,6 +4,9 @@
       .genre__name
         = link_to genre_contents_path(genre), class: 'genre__name__list' do
           = genre.name
+    .contents-title-link
+    = link_to user_path(current_user.id) do
+      "タイトル一覧"
   - else
 
      
