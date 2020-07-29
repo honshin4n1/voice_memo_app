@@ -1,5 +1,8 @@
 .side-bar
   .genre__name
     = @genre.name
+  .contents-title-link
+    = link_to user_path(current_user.id) do
+      "タイトル一覧"
 
   
