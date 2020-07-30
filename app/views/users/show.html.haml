@@ -4,6 +4,9 @@
     = date.day
     - contents.each do |content|
       .contents-title
-      - if user_signed_in? && current_user.id == content.user_id
-        = content.title
+      - if user_signed_in? && current_user.id == content.user_id && content.display == 0
+        #content-start-time
+          = content.start_time.strftime("%H:%M")
+        #content-title
+          = content.title
         
