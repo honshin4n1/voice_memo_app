@@ -1,7 +1,7 @@
 .wrapper
   = render "genres/header"
   = month_calendar events: @contents do |date, contents|
-    = date
+    = date.day
     - contents.each do |content|
       .contents-title
       - if user_signed_in? && current_user.id == content.user_id
