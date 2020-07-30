@@ -1,6 +1,8 @@
 .wrapper
   = render "genres/header"
   .side-bar
+    = link_to user_path(current_user.id), class: 'contents-title-link' do
+      >>タイトル一覧
   .main-body
     .explanation-text
       ＊音声入力するにはstartボタンを押してください＊
@@ -16,10 +18,9 @@
       - @contents.each do |content|
         .content
           .content__info
-            .content__info__title
-              = content.title
             .content__info__date
               = content.created_at.strftime("%Y/%m/%d (%a) %H:%M")
-              更新
+            .content__info__title
+              = content.title
           .content__comment
             = content.comment
