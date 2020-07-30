@@ -92,33 +92,43 @@
   }
 
   .form-box {
-    height: 20%;
     width: 80%;
-    margin: 50px 100px 100px 200px;
+    margin: 50px 100px 50px 200px;
     #title-btn {
       margin-bottom: 10px;
     }
     
     &__genre__name {
-      display: block;
       margin-bottom: 20px;
       border: 1px solid gray;
       border-radius: 4px;
       padding: 10px;
     }
     &__contents__title {
-      display: block;
       margin-bottom: 20px;
       border: 1px solid gray;
       border-radius: 4px;
       padding: 10px;
     }
     &__contents__comment {
-      display: block;
       margin-bottom: 20px;
       border: 1px solid gray;
       border-radius: 4px;
       padding: 10px;
+    }
+    &__contents__start-time {
+      height: 50px;
+      margin-bottom: 20px;
+      border: 1px solid gray;
+      border-radius: 4px;
+      padding: 5px;
+    }
+    &__contents__display {
+      height: 50px;
+      margin-bottom: 20px;
+      border: 1px solid gray;
+      border-radius: 4px;
+      padding: 5px;
     }
     &__new-memo {
       width: 60px;
