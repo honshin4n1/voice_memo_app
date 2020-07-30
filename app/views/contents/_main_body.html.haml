@@ -3,22 +3,21 @@
     ＊音声入力するにはstartボタンを押してください＊
   .form-box
     %button#title-btn
-      タイト◉ルstart
+      タイトル◉start
     %button#comment-btn
       コメント◉start
     = form_for [@genre, @content] do |f|
       = f.text_field :title, class: 'form-box__contents__title', id: 'contents__title', placeholder: 'タイトル'
-      = f.text_field :comment, class: 'form-box__contents__comment', id: 'contents__comment', placeholder: 'コメント'
+      = f.text_area :comment, class: 'form-box__contents__comment', id: 'contents__comment', placeholder: 'メモ、コメント、etc'
       = f.submit '登録', class: 'form-box__new-memo'
-
   .contents
     - @genre.contents.each do |content|
       .content
         .content__info
-          .content__info__title
-            = content.title
           .content__info__date
             = content.created_at.strftime("%Y/%m/%d (%a) %H:%M")
+          .content__info__title
+            = content.title
         .content__comment
           = content.comment
   
