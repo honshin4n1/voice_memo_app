@@ -10,10 +10,5 @@ class Content < ApplicationRecord
     return Content.all unless search
     Content.where(['title LIKE ?', "%#{search}%"] ).where(user_id: id)
   end
-
-  def start_time
-    self.created_at
-  end
-
   
 end
