@@ -2,21 +2,30 @@
   width: 70%;
   margin: 0 auto;
   margin-bottom: 100px;
-.calendar-heading {
-  text-align: center;
-  margin: 10px 0;
-  a {
-    text-decoration: none;
-    color: #FA8072;
+  .calendar-heading {
+    text-align: center;
+    margin: 10px 0;
+    a {
+      text-decoration: none;
+      color: #FA8072;
+    }
+    .calendar-title {
+      font-size: 40px;
+      margin-left: 10px;
+    }
   }
-  .calendar-title {
-    font-size: 40px;
-    margin-left: 10px;
+
+  #content-title {
+    font-size: 14px;
+    margin-bottom: 10px;
   }
-}
-  
+
+  #content-start-time {
+    font-size: 10px;
+  }
+
   .day {
-    height: 100px;
+    height: 130px;
   }
 
   .wday-0 {
