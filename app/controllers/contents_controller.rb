@@ -20,7 +20,12 @@ class ContentsController < ApplicationController
   private
 
   def content_params
-    params.require(:content).permit(:title, :comment).merge(user_id: current_user.id, genre_id: params[:genre_id])
+    params.require(:content).permit(
+      :title,
+      :comment,
+      :start_time,
+      :display
+    ).merge(user_id: current_user.id, genre_id: params[:genre_id])
     
   end
 
