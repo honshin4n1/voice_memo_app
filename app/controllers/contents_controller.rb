@@ -2,7 +2,7 @@ class ContentsController < ApplicationController
   before_action :set_genre
   def index
     @content = Content.new
-    @contents = @genre.contents
+    @contents = @genre.contents.includes(:user)
   end
 
   def new
