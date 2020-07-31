@@ -29,9 +29,12 @@
       .content
         .content__info
           .content__info__date
-            = content.created_at.strftime("%Y/%m/%d (%a) %H:%M")
+            = content.start_time.strftime("%Y/%m/%d (%a) %H:%M")
           .content__info__title
             = content.title
         .content__comment
           = content.comment
+        .content__update
+          = content.updated_at.strftime("%Y/%m/%d (%a) %H:%M")
+          更新
   
