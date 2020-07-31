@@ -44,7 +44,7 @@
   height: calc(100vh - 80px);
   width: 20%;
   float: left;
-  background-color: #f5f5f3;
+  background-color: #ffffff;
   overflow: scroll;
   .genre__name {
     height: 30px;
@@ -165,10 +165,14 @@
         }
       }
       &__comment {
-        height: 50px;
         width: 100%;
-        line-height: 50px;
         font-size: 18px;
+      }
+      &__update {
+        font-size: 11px;
+        font-family: 'Tahoma';
+        color: #aaaaaa;
+        margin-left: 20px;
       }
     }
   }
