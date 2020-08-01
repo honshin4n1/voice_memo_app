@@ -186,3 +186,17 @@ button {
   border: solid 1px gray;
   cursor: pointer;
 }
+
+.explanation-info {
+  margin-left: 100px;
+  &__text {
+    font-size: 25px;
+    font-family: 'arial unicode ms';
+    margin-top: 10px;
+  }
+  &__image {
+    width: 300px;
+    height: 300px;
+    margin: 50px 10px;
+  }
+}
