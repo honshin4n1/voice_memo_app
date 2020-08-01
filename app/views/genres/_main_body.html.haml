@@ -21,7 +21,25 @@
           = f.text_field :keyword, class: 'form-box__contents__title', id: 'search__title', placeholder: 'タイトル検索'
         = f.submit '検索', class: 'form-box__new-memo'
   - else
-    .explanation-text
-      ※新規登録またはログインしてください
+    .explanation
+      .explanation-text
+        ※新規登録またはログインしてください
+      .explanation-info
+        .explanation-info__text 
+          備忘録として。
+        .explanation-info__text 
+          手軽に使える。
+        .explanation-info__text 
+          自由にジャンル分けをしてカスタマイズ。
+        .explanation-info__text 
+          カレンダー表示機能もあるのスケジュール帳としてもご利用できます。
+        = image_tag 'voicememo1.png', class: 'explanation-info__image', alt: 'sample image'
+        = image_tag 'voicememo2.png', class: 'explanation-info__image', alt: 'sample image'
+        = image_tag 'voicememo3.png', class: 'explanation-info__image', alt: 'sample image'
+
+        
+
+
+
 
 

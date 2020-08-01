@@ -57,6 +57,11 @@
       text-decoration: none;
       color: black;
     }
+    &__edit {
+      font-size: 13px;
+      font-family: sans-serif;
+      margin-left: 5px;
+    }
   }
   .contents-title-link {
     display: block;
@@ -168,11 +173,14 @@
         width: 100%;
         font-size: 18px;
       }
-      &__update {
+      &__updated {
         font-size: 11px;
         font-family: 'Tahoma';
         color: #aaaaaa;
-        margin-left: 20px;
+      }
+      &__edit-link {
+        color: #0099ff;
+        margin-left: 5px;
       }
     }
   }
@@ -185,4 +193,18 @@ button {
   border-radius: 4px;
   border: solid 1px gray;
   cursor: pointer;
+}
+
+.explanation-info {
+  margin-left: 100px;
+  &__text {
+    font-size: 25px;
+    font-family: 'arial unicode ms';
+    margin-top: 10px;
+  }
+  &__image {
+    width: 300px;
+    height: 300px;
+    margin: 50px 10px;
+  }
 }

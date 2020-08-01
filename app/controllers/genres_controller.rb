@@ -5,24 +5,27 @@ class GenresController < ApplicationController
     @genre = Genre.new
     @content = Content.new
   end
-  
-  def new 
-    
-  end
 
   def create
     @genre = Genre.new(genre_params)
     if @genre.save
-      redirect_to root_path
+      redirect_to root_path, notice: '作成しました'
     else 
       render :index
     end
   end
 
-  def update
+  def edit
+    @genre = Genre.find(params[:id])
   end
 
-  def show
+  def update
+    @genre = Genre.find(params[:id])
+    if @genre.update(genre_params)
+      redirect_to root_path, notice: '更新しました'
+    else
+      render :edit
+    end
   end
 
 

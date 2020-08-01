@@ -4,8 +4,10 @@
       .genre__name
         = link_to genre_contents_path(genre), class: 'genre__name__list' do
           = genre.name
+        = link_to edit_genre_path(genre), class: 'genre__name__edit' do
+          編集
     = link_to user_path(current_user.id), class: 'contents-title-link' do
-      >>タイトル一覧
+      >>カレンダーへ
   - else
 
      
