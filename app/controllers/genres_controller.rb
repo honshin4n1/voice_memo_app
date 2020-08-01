@@ -11,8 +11,8 @@ class GenresController < ApplicationController
     if @genre.save
       redirect_to root_path, notice: '作成しました'
     else 
-      render :index
-      # redirect_to root_path, alert: '入力に誤りがあります'
+      # render :index
+      redirect_to root_path, alert: '入力に誤りがあります'
     end
   end
 
