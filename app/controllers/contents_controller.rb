@@ -5,15 +5,25 @@ class ContentsController < ApplicationController
     @contents = @genre.contents.includes(:user)
   end
 
-  def new
-  end
-
   def create
     @content = Content.new(content_params)
     if @content.save
-      redirect_to genre_contents_path(params[:genre_id])
+      redirect_to genre_contents_path(@genre), notice: '作成しました'
     else
       render :index
+    end
+  end
+
+  def edit
+    @content = Content.find(params[:id])
+  end
+
+  def update
+    @content =Content.find(params[:id])
+    if @content.update(content_params)
+      redirect_to genre_contents_path(@genre), notice: '更新しました'
+    else
+      render :edit
     end
   end
 
@@ -26,7 +36,6 @@ class ContentsController < ApplicationController
       :start_time,
       :display
     ).merge(user_id: current_user.id, genre_id: params[:genre_id])
-    
   end
 
   def set_genre

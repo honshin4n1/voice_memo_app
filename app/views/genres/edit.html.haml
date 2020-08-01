@@ -1,0 +1,14 @@
+.wrapper
+  = render "header"
+  .main-body
+    .explanation-text
+      ※音声入力するにはstartボタンを押してください
+    .form-box
+      %button#genre-btn
+        ジャンル◉start
+      = form_for @genre do |f|
+        .field-content
+          = f.label :title, "《ジャンル》"
+          %br/
+          = f.text_field :name, class: 'form-box__genre__name', id: 'genre__name', placeholder: 'ジャンル'
+        = f.submit '編集', class: 'form-box__new-memo'

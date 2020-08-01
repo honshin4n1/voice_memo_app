@@ -4,7 +4,7 @@ class Content < ApplicationRecord
   validates :title, presence: true
   attr_accessor :keyword
 
-  default_scope -> { order(updated_at: :desc) }
+  default_scope -> { order(updated_at: :DESC) }
 
   def self.search(search, id)
     return Content.all unless search

@@ -57,6 +57,11 @@
       text-decoration: none;
       color: black;
     }
+    &__edit {
+      font-size: 13px;
+      font-family: sans-serif;
+      margin-left: 5px;
+    }
   }
   .contents-title-link {
     display: block;
@@ -168,11 +173,14 @@
         width: 100%;
         font-size: 18px;
       }
-      &__update {
+      &__updated {
         font-size: 11px;
         font-family: 'Tahoma';
         color: #aaaaaa;
-        margin-left: 20px;
+      }
+      &__edit-link {
+        color: #0099ff;
+        margin-left: 5px;
       }
     }
   }

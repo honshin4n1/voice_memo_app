@@ -1,0 +1,32 @@
+.wrapper
+  = render "header"
+  .side-bar
+    .genre__name
+      = @genre.name
+  .main-body
+    .explanation-text
+      ※音声入力するにはstartボタンを押してください
+    .form-box
+      %button#title-btn
+        タイトル◉start
+      %button#comment-btn
+        コメント◉start
+      = form_for [@genre, @content] do |f|
+        .field-content
+          = f.label :title, "《タイトル》"
+          %br/
+          = f.text_field :title, class: 'form-box__contents__title', id: 'contents__title', placeholder: 'タイトル'
+        .field-content
+          = f.label :comment, "《メモ》"
+          %br/
+          = f.text_area :comment, class: 'form-box__contents__comment', id: 'contents__comment', placeholder: 'メモ、コメント、etc'
+        .field-content
+          = f.label :start_time, "《作成日や予定日を入力》"
+          %br/
+          = f.datetime_select :start_time, {}, class: 'form-box__contents__start-time'
+        .field-content
+          = f.label :display, "《カレンダーに表示するか選択してください》"
+          %br/
+          = f.select :display, [['表示する', 0], ['表示しない', 1]], {prompt:"選択してください"},  class: 'form-box__contents__display'
+        = f.submit '編集', class: 'form-box__new-memo'
+  
