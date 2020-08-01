@@ -19,6 +19,18 @@ window.addEventListener('DOMContentLoaded', function() {
 },false);
 
 
+$(function() {
+    //マウスを乗せたら発動
+    $('.genre__name__list').hover(function() {
+      //マウスを乗せたら色が変わる
+      $(this).css('color', '#ff4500');
+    }, function() {
+        //色指定を空欄にすれば元の色に戻る
+        $(this).css('color', '');
+    });
+  });
+
+
 
  
   
