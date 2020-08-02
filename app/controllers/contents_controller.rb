@@ -1,5 +1,7 @@
 class ContentsController < ApplicationController
   before_action :set_genre
+  before_action :move_to_root
+
   def index
     @content = Content.new
     @contents = @genre.contents.includes(:user)
@@ -40,6 +42,10 @@ class ContentsController < ApplicationController
 
   def set_genre
     @genre = Genre.find(params[:genre_id])
+  end
+
+  def move_to_root
+    redirect_to root_path unless current_user.id == @genre.user_id
   end
 
 end
