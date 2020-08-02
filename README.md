@@ -15,7 +15,7 @@ Web Speech APIによりChrome環境では音声入力が可能です。
 
 # Sample
 
-https://gyazo.com/c729c8758fc627a8fab0c2c4e443b884
+[![Image from Gyazo](https://i.gyazo.com/c729c8758fc627a8fab0c2c4e443b884.gif)](https://gyazo.com/c729c8758fc627a8fab0c2c4e443b884)
 
 
 
