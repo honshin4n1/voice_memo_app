@@ -17,6 +17,13 @@ Web Speech APIによりChrome環境では音声入力が可能です。
 
 [![Image from Gyazo](https://i.gyazo.com/c729c8758fc627a8fab0c2c4e443b884.gif)](https://gyazo.com/c729c8758fc627a8fab0c2c4e443b884)
 
+# 本番環境
+
+http://54.249.157.151/
+
+※http通信の為マイク許可はできません。
+
+
 
 
 
