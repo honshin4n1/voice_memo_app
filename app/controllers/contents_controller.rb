@@ -1,6 +1,6 @@
 class ContentsController < ApplicationController
   before_action :set_genre
-  # before_action :move_to_root
+  before_action :move_to_root
 
   def index
     @content = Content.new
