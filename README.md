@@ -36,7 +36,7 @@ http://54.249.157.151/
   
 # 開発環境
 
-- os Mac　Catalina 10.15.6  
+- os Mac Catalina 10.15.6  
 - Ruby 2.5.1  
 - Ruby on Rails 5.0.7.2  
 - MySQL  
