@@ -29,7 +29,25 @@ http://54.249.157.151/
   ※検索機能やカレンダー表示の動作確認にお使いください。
   
 
-# 
+# 使い方
+
+`
+ $ git clone https://github.com/honshin4n1/voice_memo_app.git
+
+ $ cd voice_memo_app
+
+ $ bundle install
+
+ $ rails db:create
+
+ $ rails db:migrate
+
+ $ rails s
+
+  http://localhost:3000  
+                                                                `
+                                                                
+
 
 
 
