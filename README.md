@@ -31,21 +31,20 @@ http://54.249.157.151/
 
 # 使い方
 
-`
- $ git clone https://github.com/honshin4n1/voice_memo_app.git
+ `$ git clone https://github.com/honshin4n1/voice_memo_app.git`
 
- $ cd voice_memo_app
+ `$ cd voice_memo_app`
 
- $ bundle install
+ `$ bundle install`
 
- $ rails db:create
+ `$ rails db:create`
 
- $ rails db:migrate
+ `$ rails db:migrate`
 
- $ rails s
+ `$ rails s`
 
-  http://localhost:3000  
-                                                                `
+ ` http://localhost:3000 ` 
+  
                                                                 
 
 
