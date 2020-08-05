@@ -56,7 +56,7 @@ http://54.249.157.151/
 - Ruby 2.5.1  
 - Ruby on Rails 5.0.7.2  
 - MySQL  
-- AWS/EC2/unicon  
+- AWS/EC2/unicorn  
 - Web Speech API
 
 
