@@ -12,7 +12,7 @@ class ContentsController < ApplicationController
     if @content.save
       redirect_to genre_contents_path(@genre), notice: '作成しました'
     else
-      render :index
+      redirect_to genre_contents_path(@genre), alert: '入力に誤りがあります'
     end
   end
 
