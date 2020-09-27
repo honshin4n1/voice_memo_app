@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-.wrapper{
+.wrapper {
   min-height: 100vh;
 }
 
@@ -10,13 +10,13 @@
   height: 80px;
   width: 100vw;
   line-height: 80px;
-  background-color: #EEE8AA;
+  background-color: #eee8aa;
   display: flex;
   justify-content: space-evenly;
   &__title {
     width: 30%;
     font-size: 45px;
-    font-family: 'arial black';
+    font-family: "arial black";
     color: #473838;
     &__link {
       text-decoration: none;
@@ -24,7 +24,6 @@
     }
   }
   &__btns {
-    width: 15%;
     display: flex;
     &--signup {
       display: block;
@@ -52,7 +51,7 @@
     margin: 30px;
     line-height: 30px;
     font-size: 25px;
-    font-family: 'arial unicode ms';
+    font-family: "arial unicode ms";
     &__list {
       text-decoration: none;
       color: black;
@@ -61,7 +60,7 @@
       font-size: 13px;
       font-family: sans-serif;
       margin-left: 5px;
-      color: #4169E1;
+      color: #4169e1;
     }
   }
   .contents-title-link {
@@ -80,12 +79,11 @@
     &__new-memo {
       border-radius: 4px;
       border: 1px solid gray;
-      background-color: #EEE8AA;
+      background-color: #eee8aa;
       cursor: pointer;
     }
   }
 }
-
 
 .main-body {
   height: calc(100vh - 80px);
@@ -104,7 +102,7 @@
     #title-btn {
       margin-bottom: 10px;
     }
-    
+
     &__genre__name {
       margin-bottom: 20px;
       border: 1px solid gray;
@@ -144,7 +142,7 @@
       border-radius: 4px;
       border: 1px solid gray;
       margin: 0 auto;
-      background-color: #EEE8AA;
+      background-color: #eee8aa;
       cursor: pointer;
     }
   }
@@ -168,7 +166,7 @@
           height: 30px;
           line-height: 50px;
           font-size: 14px;
-          font-family: 'Tahoma';
+          font-family: "Tahoma";
         }
       }
       &__comment {
@@ -177,12 +175,15 @@
       }
       &__updated {
         font-size: 11px;
-        font-family: 'Tahoma';
+        font-family: "Tahoma";
         color: #aaaaaa;
       }
       &__edit-link {
         color: #0099ff;
         margin-left: 5px;
+      }
+      &__delete-link {
+        color: red;
       }
     }
   }
@@ -201,7 +202,7 @@ button {
   margin-left: 100px;
   &__text {
     font-size: 25px;
-    font-family: 'arial unicode ms';
+    font-family: "arial unicode ms";
     margin-top: 10px;
   }
   &__image {

@@ -37,6 +37,7 @@
         .content__updated
           = content.updated_at.strftime("%Y/%m/%d (%a) %H:%M")
           更新
-          = link_to edit_genre_content_path(@genre, content), class: 'content__edit-link' do
-            編集する
-            
+          = link_to "編集する", edit_genre_content_path(@genre, content), class: 'content__edit-link'
+          = link_to "削除する", "/genres/#{@genre.id}/contents/#{content.id}", method: :delete, class: 'content__delete-link'
+
+

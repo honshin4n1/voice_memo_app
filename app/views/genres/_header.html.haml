@@ -1,7 +1,6 @@
 .header
   .header__title
-    = link_to root_path, class: "header__title__link" do
-      Voice Memo
+    = link_to "Voice Memo", root_path, class: "header__title__link"
   .header__btns
     - if user_signed_in?
       .header__btns--signup
