@@ -1,5 +1,5 @@
 class Genre < ApplicationRecord
-  has_many :contents
+  has_many :contents, dependent: :destroy
   belongs_to :user
   validates :name, presence: true, uniqueness: { scope: :user_id }
 

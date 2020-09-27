@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :searches, only: :index
   end
   resources :genres, except: [:destroy, :show] do
-    resources :contents, except: [:destroy, :show]
+    resources :contents, except: [:show]
   end
   resources :users, only: [:show]
 end

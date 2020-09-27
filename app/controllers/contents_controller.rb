@@ -21,12 +21,18 @@ class ContentsController < ApplicationController
   end
 
   def update
-    @content =Content.find(params[:id])
+    @content = Content.find(params[:id])
     if @content.update(content_params)
       redirect_to genre_contents_path(@genre), notice: '更新しました'
     else
       render :edit
     end
+  end
+
+  def destroy
+    content = Content.find(params[:id])
+    content.destroy
+    redirect_to genre_contents_path(@genre), notice: '削除しました'
   end
 
   private

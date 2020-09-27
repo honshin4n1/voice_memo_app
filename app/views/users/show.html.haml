@@ -7,6 +7,5 @@
       - if user_signed_in? && current_user.id == content.user_id && content.display == 0
         #content-start-time
           = content.start_time.strftime("%H:%M")
-        #content-title
-          = content.title
-        
+        = link_to "#{content.title}", genre_contents_path(content.genre.id), id: "content-title"
+        = link_to " 削除", "/genres/#{content.genre.id}/contents/#{content.id}", method: :delete, id: 'content-delete-link'

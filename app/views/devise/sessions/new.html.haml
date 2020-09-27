@@ -8,6 +8,7 @@
       ログイン
     .signup-content__form
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: @user
         .field
           = f.label :email, "メールアドレス"
           %br/
