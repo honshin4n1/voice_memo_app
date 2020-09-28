@@ -9,3 +9,4 @@
           = content.start_time.strftime("%H:%M")
         = link_to "#{content.title}", genre_contents_path(content.genre.id), id: "content-title"
         = link_to " 削除", "/genres/#{content.genre.id}/contents/#{content.id}", method: :delete, id: 'content-delete-link'
+  = render "genres/footer"

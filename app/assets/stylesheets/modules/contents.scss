@@ -1,7 +1,8 @@
 .simple-calendar {
-  width: 70%;
-  margin: 0 auto;
-  margin-bottom: 100px;
+  width: 90%;
+  height: 100%;
+  flex: 1;
+  margin: 20px auto;
   .calendar-heading {
     text-align: center;
     margin: 10px 0;
@@ -31,7 +32,7 @@
   }
 
   .day {
-    height: 130px;
+    height: 150px;
   }
 
   .wday-0 {
