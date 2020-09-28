@@ -42,7 +42,7 @@ Web Speech APIによりChrome環境では音声入力が可能です。
 
 # 本番環境
 
-http://54.249.157.151/
+http://www.myvoicememo.com/
 
 ※http通信の為、本番環境ではマイク許可はできません。
 
