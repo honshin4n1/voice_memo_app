@@ -5,6 +5,8 @@
     .form-box
       %button#genre-btn
         ジャンル◉start
+      %button#genre-btn-stop
+        stop
       = form_for @genre do |f|
         .field-content
           = f.label :title, "《ジャンル》"
@@ -14,6 +16,8 @@
     .form-box
       %button#search-btn
         検索◉start
+      %button#search-btn-stop
+        stop
       = form_for(@content, url: contents_searches_path, local: true, method: :get, class: "search-form") do |f|
         .field-content
           = f.label :search, "《検索できます》"
@@ -36,7 +40,6 @@
         = image_tag 'voicememo1.png', class: 'explanation-info__image', alt: 'sample image'
         = image_tag 'voicememo2.png', class: 'explanation-info__image', alt: 'sample image'
         = image_tag 'voicememo3.png', class: 'explanation-info__image', alt: 'sample image'
-
         
 
 

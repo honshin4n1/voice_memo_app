@@ -4,17 +4,18 @@
 
 .wrapper {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
   height: 80px;
-  width: 100vw;
+  width: 100%;
   line-height: 80px;
   background-color: #eee8aa;
   display: flex;
   justify-content: space-evenly;
   &__title {
-    width: 30%;
     font-size: 45px;
     font-family: "arial black";
     color: #473838;
@@ -39,10 +40,15 @@
   }
 }
 
+.container {
+  flex: 1;
+  height: 100vh;
+  display: flex;
+}
+
 .side-bar {
-  height: calc(100vh - 80px);
+  height: 100%;
   width: 20%;
-  float: left;
   background-color: #ffffff;
   overflow: scroll;
   .genre__name {
@@ -86,11 +92,11 @@
 }
 
 .main-body {
-  height: calc(100vh - 80px);
+  height: 100%;
   width: 80%;
-  float: right;
   overflow: scroll;
   background-color: #f5f5f3;
+
   .explanation-text {
     margin: 50px 80px;
     color: red;
@@ -148,13 +154,15 @@
   }
   .contents {
     height: 70%;
+    width: 100%;
     display: flex;
+    padding: 20px 10px;
     justify-content: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
     .content {
-      height: 150px;
-      margin: 0px 15px;
+      width: 24%;
+      margin: 0px 5px;
       border-top: 2px solid #ffffff;
       &__info {
         &__title {
@@ -210,4 +218,11 @@ button {
     height: 300px;
     margin: 50px 10px;
   }
+}
+
+.footer {
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  background-color: #eee8aa;
 }
