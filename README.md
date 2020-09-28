@@ -37,14 +37,12 @@ Web Speech APIによりChrome環境では音声入力が可能です。
 - viewのデザイン。
 - PC以外の端末に対応したレイアウト。
 - 音声入力がChromeのみの対応の為、別のAPIの導入。
-- 本願環境をhttps通信にしてマイクを使えるようにする。
 
 
 # 本番環境
 
-http://www.myvoicememo.com/
+https://www.myvoicememo.com/
 
-※http通信の為、本番環境ではマイク許可はできません。
 
 <テストアカウント>   
  - e-mail: memo@gmail.com  
