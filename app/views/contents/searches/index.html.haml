@@ -1,21 +1,12 @@
 .wrapper
   = render "genres/header"
   .container
-    .side-bar
-      = link_to user_path(current_user.id), class: 'contents-title-link' do
-        >>カレンダーへ
+    = render "genres/side_bar"
     .main-body
       .explanation-text
-        ※音声入力するにはstartボタンを押してください
-      
-      .form-box
-        %button#search-btn
-          検索◉start
-        %button#search-btn-stop
-          stop
-        = form_for(@content, url: contents_searches_path, local: true, method: :get, class: "search-form") do |f|
-          = f.text_field :keyword, class: 'form-box__contents__title', id: 'search__title', placeholder: 'タイトル検索'
-          = f.submit '検索', class: 'form-box__new-memo'
+        ※音声入力するには
+        = icon('fa', 'microphone')
+        ボタンを押してください
       .contents
         - @contents.each do |content|
           .content

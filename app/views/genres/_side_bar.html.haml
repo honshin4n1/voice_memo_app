@@ -1,6 +1,6 @@
 .side-bar
-  - if user_signed_in?
-    %ul.menu-list
+  %ul.menu-list
+    - if user_signed_in?
       %li.menu-list__genres
         ジャンル
       %li.menu-list__genres-form
@@ -20,12 +20,24 @@
       %li.menu-list__info
         MENU
       %li.menu-list__link
-        = link_to "カレンダー", user_path(current_user.id), class: 'menu-list__link--name'
+        = link_to root_path, class: 'menu-list__link--name' do
+          = icon('fas', 'home')
+          ホーム
       %li.menu-list__link
-        = link_to "メモ一覧", root_path, class: 'menu-list__link--name'
+        = link_to user_path(current_user.id), class: 'menu-list__link--name' do
+          = icon('fas', 'calendar-alt')
+          カレンダー
       %li.menu-list__link
-        = link_to "アカウント", root_path, class: 'menu-list__link--name'
+        = link_to "アカウント", '#', class: 'menu-list__link--name'
       %li.menu-list__link
         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'menu-list__link--name'
+      %li.menu-list__link
+        =link_to "TOP", '#Top', class: 'menu-list__link--name'
+    - else
+      %li.menu-list__link
+      %li.menu-list__link
+        = link_to "新規登録", new_user_registration_path, class: 'menu-list__link--name' 
+      %li.menu-list__link
+        = link_to "ログイン", new_user_session_path, class: 'menu-list__link--name'  
 
 
