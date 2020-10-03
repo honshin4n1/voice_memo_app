@@ -14,16 +14,20 @@
           = f.text_field :name, class: 'form-box__genre__name', id: 'genre__name', placeholder: 'ジャンル'
         = f.submit '登録', class: 'form-box__new-memo'
     .form-box
-      %button#search-btn
-        検索◉start
-      %button#search-btn-stop
+      = button_tag type: 'button', id: 'search-btn' do
+        = icon('fa', 'microphone')
+        start
+      = button_tag type: 'button', id: 'search-btn-stop' do
+        = icon('fa', 'stop')
         stop
       = form_for(@content, url: contents_searches_path, local: true, method: :get, class: "search-form") do |f|
         .field-content
           = f.label :search, "《検索できます》"
           %br/
           = f.text_field :keyword, class: 'form-box__contents__title', id: 'search__title', placeholder: 'タイトル検索'
-        = f.submit '検索', class: 'form-box__new-memo'
+        = button_tag type: 'submit', class: '' do
+          = icon('fa', 'search')
+          検索
   - else
     .explanation
       .explanation-text
