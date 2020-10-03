@@ -1,25 +1,24 @@
 .header
-  .header__menu
-    = icon('fas', 'bars')
-  -# .header__genres
-  -#   ジャンル
-  -#   = icon('fa', 'caret-down')
+  - if user_signed_in?
+    .header__menu
+      = icon('fas', 'bars')
   .header__title
     = link_to "Voice Memo", root_path, class: "header__title__link"
   .header__search
-    .header__search--btns
-      = button_tag type: 'button', id: 'search-btn' do
-        = icon('fa', 'microphone', class: 'icon-rec')
-        start
-      = button_tag type: 'button', id: 'search-btn-stop' do
-        = icon('fa', 'stop')
-        stop
-    .header__search--form
-      = form_for(@content, url: contents_searches_path, local: true, method: :get, class: "search-form") do |f|
-        = f.text_field :keyword, class: 'header__search__contents__title', id: 'search__title', placeholder: 'タイトル検索'
-        = button_tag type: 'submit', class: 'submit-btn search' do
-          = icon('fa', 'search')
-  
+    - if user_signed_in?
+      .header__search--btns
+        = button_tag type: 'button', class: 'mic-btn', id: 'search-btn' do
+          = icon('fa', 'microphone')
+        = button_tag type: 'button', class: 'mic-btn', id: 'search-btn-stop' do
+          = icon('far', 'stop-circle')
+      .header__search--form
+        = form_for(@content, url: contents_searches_path, local: true, method: :get, class: "search-form") do |f|
+          = f.text_field :keyword, class: 'header__search__contents__title', id: 'search__title', placeholder: 'タイトル検索'
+          = button_tag type: 'submit', class: 'submit-btn search' do
+            = icon('fa', 'search')
+    - else
+      = link_to "新規登録", new_user_registration_path, class: "header__btns--signup" 
+      = link_to "ログイン", new_user_session_path, class: 'header__btns--login' 
 
   -# .header__btns
   -#   - if user_signed_in?

@@ -2,6 +2,7 @@
   - if current_user.id == @genre.user.id
     .genre__name
       = @genre.name
+      = link_to "編集", edit_genre_path(@genre), class: 'genre__name__edit'
     .form-box
       %button#search-btn
         検索◉start

@@ -1,10 +1,31 @@
 .side-bar
   - if user_signed_in?
-    - @genres.each do |genre|
-      - if current_user.id == genre.user_id
-        .genre__name
-          = link_to "#{genre.name}", genre_contents_path(genre), class: 'genre__name__list'
-          = link_to "編集", edit_genre_path(genre), class: 'genre__name__edit'
-    = link_to ">>カレンダーへ", user_path(current_user.id), class: 'contents-title-link'
+    %ul.menu-list
+      %li.menu-list__genres
+        ジャンル
+      %li.menu-list__genres-form
+        = button_tag type: 'button', class: 'mic-btn', id: 'genre-btn' do
+          = icon('fa', 'microphone')
+        = button_tag type: 'button', class: 'mic-btn', id: 'genre-btn-stop' do
+          = icon('far', 'stop-circle')
+        = form_for @genre do |f|
+          = f.text_field :name, class: 'genre-form', id: 'genre__name', placeholder: 'ジャンル追加'
+          = button_tag type: 'submit', class: 'submit-btn post' do
+            = icon('fas', 'plus')
+        
+        - @genres.each do |genre|
+          - if current_user.id == genre.user_id
+            %li.menu-list__link
+              = link_to "#{genre.name}", genre_contents_path(genre), class: 'menu-list__link--name'
+      %li.menu-list__info
+        MENU
+      %li.menu-list__link
+        = link_to "カレンダー", user_path(current_user.id), class: 'menu-list__link--name'
+      %li.menu-list__link
+        = link_to "メモ一覧", root_path, class: 'menu-list__link--name'
+      %li.menu-list__link
+        = link_to "アカウント", root_path, class: 'menu-list__link--name'
+      %li.menu-list__link
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'menu-list__link--name'
 
 
