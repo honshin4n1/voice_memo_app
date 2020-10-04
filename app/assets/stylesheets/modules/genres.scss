@@ -193,8 +193,10 @@ i.fas.fa-plus {
   background-color: #222222;
 
   .explanation-text {
+    width: 60%;
     margin: 50px 80px;
     color: red;
+    text-align: center;
   }
 
   .field-content {
@@ -378,15 +380,21 @@ i.fas.fa-plus {
 .explanation-info {
   margin-left: 100px;
   &__text {
+    width: 60%;
+    text-align: center;
     font-size: 25px;
     font-family: "arial unicode ms";
-    margin: 20px;
+    margin: 50px 20px;
     color: #f5f5f3;
+  }
+  &__img {
+    width: 60%;
+    text-align: center;
+    margin-bottom: 50px;
   }
   &__image {
     width: 300px;
     height: 300px;
-    margin: 50px 10px;
   }
 }
 .search-icon {

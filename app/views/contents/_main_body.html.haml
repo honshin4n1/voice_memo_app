@@ -57,20 +57,4 @@
             = link_to "/genres/#{@genre.id}/contents/#{content.id}", method: :delete, class: 'content__delete-link' do
               = icon('far', 'trash-alt')
 
-    -# - @genre.contents.each do |content|
-    -#   .content
-    -#     .content__info
-    -#       .content__info__date
-    -#         = content.start_time.strftime("%Y/%m/%d (%a) %H:%M")
-    -#       .content__info__title
-    -#         = content.title
-    -#     .content__comment
-    -#       = content.comment
-    -#     .content__updated
-    -#       = content.updated_at.strftime("%Y/%m/%d (%a) %H:%M")
-    -#       更新
-    -#       = link_to edit_genre_content_path(@genre, content), class: 'content__edit-link' do
-    -#         = icon('fas', 'edit')
-    -#       = link_to "/genres/#{@genre.id}/contents/#{content.id}", method: :delete, class: 'content__delete-link' do
-    -#         = icon('far', 'trash-alt')
 
