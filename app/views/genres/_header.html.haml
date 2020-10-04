@@ -1,11 +1,18 @@
 .header
+  .header__menu
+    = icon('fas', 'bars')
   .header__title
     = link_to "Voice Memo", root_path, class: "header__title__link"
-  .header__btns
+  .header__search
     - if user_signed_in?
-      .header__btns--signup
-        = current_user.name
-      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'header__btns--login' 
-    - else
-      = link_to "新規登録", new_user_registration_path, class: "header__btns--signup" 
-      = link_to "ログイン", new_user_session_path, class: 'header__btns--login' 
+      .header__search--btns
+        = button_tag type: 'button', class: 'mic-btn', id: 'search-btn' do
+          = icon('fa', 'microphone')
+        = button_tag type: 'button', class: 'mic-btn', id: 'search-btn-stop' do
+          = icon('far', 'stop-circle')
+      .header__search--form
+        = form_for(@content, url: contents_searches_path, local: true, method: :get, class: "search-form") do |f|
+          = f.text_field :keyword, class: 'header__search__contents__title', id: 'search__title', placeholder: 'タイトル検索'
+          = button_tag type: 'submit', class: 'submit-btn search' do
+            = icon('fa', 'search')
+            

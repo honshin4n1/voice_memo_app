@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
+    @content = Content.new
     user = User.find(params[:id])
     if current_user&.id == user.id
        @contents = user.contents

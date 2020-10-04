@@ -1,29 +1,26 @@
 .main-body
   - if user_signed_in?
     .explanation-text
-      ※音声入力するにはstartボタンを押してください
-    .form-box
-      %button#genre-btn
-        ジャンル◉start
-      %button#genre-btn-stop
-        stop
-      = form_for @genre do |f|
-        .field-content
-          = f.label :title, "《ジャンル》"
-          %br/
-          = f.text_field :name, class: 'form-box__genre__name', id: 'genre__name', placeholder: 'ジャンル'
-        = f.submit '登録', class: 'form-box__new-memo'
-    .form-box
-      %button#search-btn
-        検索◉start
-      %button#search-btn-stop
-        stop
-      = form_for(@content, url: contents_searches_path, local: true, method: :get, class: "search-form") do |f|
-        .field-content
-          = f.label :search, "《検索できます》"
-          %br/
-          = f.text_field :keyword, class: 'form-box__contents__title', id: 'search__title', placeholder: 'タイトル検索'
-        = f.submit '検索', class: 'form-box__new-memo'
+      ※音声入力するには
+      = icon('fa', 'microphone')
+      ボタンを押してください
+    .explanation
+      .explanation-info
+        .explanation-info__text 
+          備忘録として。
+        .explanation-info__text 
+          手軽に使える。
+        .explanation-info__text 
+          自由にジャンル分けをしてカスタマイズ。
+        .explanation-info__text 
+          カレンダー表示機能もあるのスケジュール帳としてもご利用できます。
+        .explanation-info__img 
+          = link_to "https://gyazo.com/e57b13a02a6103fde0b21bfc9de0fe55" do
+            <video alt="Video from Gyazo" width="318" autoplay muted loop playsinline controls><source src="https://i.gyazo.com/e57b13a02a6103fde0b21bfc9de0fe55.mp4" type="video/mp4" /></video></>
+        .explanation-info__img 
+          = link_to "https://gyazo.com/0bf71fd1eec62ef96b349ac22b608055" do
+            <video alt="Video from Gyazo" width="256" autoplay muted loop playsinline controls><source src="https://i.gyazo.com/0bf71fd1eec62ef96b349ac22b608055.mp4" type="video/mp4" /></video></>
+          = image_tag 'voicememo3.png', class: 'explanation-info__image', alt: 'sample image'
   - else
     .explanation
       .explanation-text
@@ -37,10 +34,14 @@
           自由にジャンル分けをしてカスタマイズ。
         .explanation-info__text 
           カレンダー表示機能もあるのスケジュール帳としてもご利用できます。
-        = image_tag 'voicememo1.png', class: 'explanation-info__image', alt: 'sample image'
-        = image_tag 'voicememo2.png', class: 'explanation-info__image', alt: 'sample image'
-        = image_tag 'voicememo3.png', class: 'explanation-info__image', alt: 'sample image'
-        
+        .explanation-info__img 
+          = link_to "https://gyazo.com/e57b13a02a6103fde0b21bfc9de0fe55" do
+            <video alt="Video from Gyazo" width="318" autoplay muted loop playsinline controls><source src="https://i.gyazo.com/e57b13a02a6103fde0b21bfc9de0fe55.mp4" type="video/mp4" /></video></>
+        .explanation-info__img 
+          = link_to "https://gyazo.com/0bf71fd1eec62ef96b349ac22b608055" do
+            <video alt="Video from Gyazo" width="256" autoplay muted loop playsinline controls><source src="https://i.gyazo.com/0bf71fd1eec62ef96b349ac22b608055.mp4" type="video/mp4" /></video></>
+          = image_tag 'voicememo3.png', class: 'explanation-info__image', alt: 'sample image'
+
 
 
 

@@ -16,17 +16,19 @@ class GenresController < ApplicationController
   end
 
   def edit
+    @content = Content.new
     @genre = Genre.find(params[:id])
   end
 
   def update
     @genre = Genre.find(params[:id])
     if @genre.update(genre_params)
-      redirect_to root_path, notice: '更新しました'
+      redirect_to genre_contents_path(@genre), notice: '更新しました'
     else
       render :edit
     end
   end
+
 
 
   private

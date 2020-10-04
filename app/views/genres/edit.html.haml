@@ -1,19 +1,56 @@
 .wrapper
-  = render "header"
+  .header
+    .header__menu
+      -# = icon('fas', 'bars')
+    .header__title
+      = link_to "Voice Memo", root_path, class: "header__title__link"
+    .header__search
+      - if user_signed_in?
+        .header__search--btns
+          = button_tag type: 'button', class: 'mic-btn', id: 'search-btn' do
+            = icon('fa', 'microphone')
+          = button_tag type: 'button', class: 'mic-btn', id: 'search-btn-stop' do
+            = icon('far', 'stop-circle')
+        .header__search--form
+          = form_for(@content, url: contents_searches_path, local: true, method: :get, class: "search-form") do |f|
+            = f.text_field :keyword, class: 'header__search__contents__title', id: 'search__title', placeholder: 'タイトル検索'
+            = button_tag type: 'submit', class: 'submit-btn search' do
+              = icon('fa', 'search')
   .container
     .side-bar
+      %ul.menu-list
+        - if current_user.id == @genre.user.id
+          %li.menu-list__genres
+            = @genre.name
+            = link_to edit_genre_path(@genre), class: 'genre__name__edit' do
+              -# = icon('fas', 'edit')
+              -# = icon('far', 'trash-alt')
+          %li.menu-list__genres-form
+            = button_tag type: 'button', class: 'mic-btn', id: 'genre-btn' do
+              = icon('fa', 'microphone')
+            = button_tag type: 'button', class: 'mic-btn', id: 'genre-btn-stop' do
+              = icon('far', 'stop-circle')
+            = form_for @genre do |f|
+              = f.text_field :name, class: 'genre-form', id: 'genre__name', placeholder: 'ジャンル追加'
+              = button_tag type: 'submit', class: 'submit-btn post' do
+                = icon('fas', 'plus')
+          %li.menu-list__link
+            = link_to root_path, class: 'menu-list__link--name' do
+              = icon('fas', 'home')
+              ホーム
+          %li.menu-list__link
+            = link_to user_path(current_user.id), class: 'menu-list__link--name' do
+              = icon('fas', 'calendar-alt')
+              カレンダー
+          %li.menu-list__link
+            = link_to "アカウント", '#', class: 'menu-list__link--name'
+          %li.menu-list__link
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'menu-list__link--name'
+          %li.menu-list__link
+            =link_to "TOP", '#Top', class: 'menu-list__link--name'
     .main-body
       .explanation-text
-        ※音声入力するにはstartボタンを押してください
-      .form-box
-        %button#genre-btn
-          ジャンル◉start
-        %button#genre-btn-stop
-          stop
-        = form_for @genre do |f|
-          .field-content
-            = f.label :title, "《ジャンル》"
-            %br/
-            = f.text_field :name, class: 'form-box__genre__name', id: 'genre__name', placeholder: 'ジャンル'
-          = f.submit '編集', class: 'form-box__new-memo'
+        ※音声入力するには
+        = icon('fa', 'microphone')
+        ボタンを押してください
   = render "genres/footer"

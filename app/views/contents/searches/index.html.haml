@@ -1,29 +1,32 @@
 .wrapper
   = render "genres/header"
   .container
-    .side-bar
-      = link_to user_path(current_user.id), class: 'contents-title-link' do
-        >>カレンダーへ
+    = render "genres/side_bar"
     .main-body
       .explanation-text
-        ※音声入力するにはstartボタンを押してください
-      
-      .form-box
-        %button#search-btn
-          検索◉start
-        %button#search-btn-stop
-          stop
-        = form_for(@content, url: contents_searches_path, local: true, method: :get, class: "search-form") do |f|
-          = f.text_field :keyword, class: 'form-box__contents__title', id: 'search__title', placeholder: 'タイトル検索'
-          = f.submit '検索', class: 'form-box__new-memo'
+        ※音声入力するには
+        = icon('fa', 'microphone')
+        ボタンを押してください
       .contents
-        - @contents.each do |content|
-          .content
-            .content__info
-              .content__info__date
-                = content.created_at.strftime("%Y/%m/%d (%a) %H:%M")
-              .content__info__title
+        %table.contents-tb
+          %tr.content-tr
+            %th.content-th-title
+              TITLE
+            %th.content-th-memo
+              MEMO
+            %th.content-th-start_time
+              作成/予定日時
+            %th.content-th-updated_at
+              更新日
+          - @contents.each do |content|
+            %tr.content-tr
+              %td.content-title
                 = content.title
-            .content__comment
-              = content.comment
+              %td.content-comment
+                = content.comment
+              %td.content-start_time
+                = content.start_time.strftime("%Y/%m/%d (%a) %H:%M")
+              %td.content-updated_at
+                = content.updated_at.strftime("%Y/%m/%d (%a) %H:%M")
+                更新
   = render "genres/footer"

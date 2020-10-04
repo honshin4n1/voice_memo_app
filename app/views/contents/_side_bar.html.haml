@@ -1,16 +1,24 @@
 .side-bar
-  - if current_user.id == @genre.user.id
-    .genre__name
-      = @genre.name
-    .form-box
-      %button#search-btn
-        検索◉start
-      %button#search-btn-stop
-        stop
-      = form_for(@content, url: contents_searches_path, local: true, method: :get, class: "search-form") do |f|
-        = f.text_field :keyword, class: 'form-box__contents__title', id: 'search__title', placeholder: 'タイトル検索'
-        = f.submit '検索', class: 'form-box__new-memo'
-    = link_to user_path(current_user.id), class: 'contents-title-link' do
-      >>カレンダーへ
+  %ul.menu-list
+    - if current_user.id == @genre.user.id
+      %li.menu-list__genres
+        = @genre.name
+        = link_to edit_genre_path(@genre), class: 'genre__name__edit' do
+          = icon('fas', 'edit')
+          -# = icon('far', 'trash-alt')
+      %li.menu-list__link
+        = link_to root_path, class: 'menu-list__link--name' do
+          = icon('fas', 'home')
+          ホーム
+      %li.menu-list__link
+        = link_to user_path(current_user.id), class: 'menu-list__link--name' do
+          = icon('fas', 'calendar-alt')
+          カレンダー
+      %li.menu-list__link
+        = link_to "アカウント", '#', class: 'menu-list__link--name'
+      %li.menu-list__link
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'menu-list__link--name'
+      %li.menu-list__link
+        =link_to "TOP", '#Top', class: 'menu-list__link--name'
 
   
