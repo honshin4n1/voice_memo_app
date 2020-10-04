@@ -44,7 +44,7 @@
     &--form {
       i.fa.fa-search {
         font-size: 20px;
-        color: #f9fafa;
+        color: #f5f5f3;
         cursor: pointer;
       }
     }
@@ -53,20 +53,6 @@
       border-radius: 4px;
       border: solid 1px #0c161c;
       background-color: #f5f5f3;
-    }
-  }
-  &__btns {
-    display: flex;
-    &--signup {
-      display: block;
-      color: #473838;
-      text-decoration: none;
-    }
-    &--login {
-      display: block;
-      color: #473838;
-      text-decoration: none;
-      padding-left: 30px;
     }
   }
 }
@@ -102,8 +88,8 @@ i.fas.fa-plus {
 
 .side-bar {
   height: 100%;
-  width: 20%;
-  background-color: #888888;
+  width: 18%;
+  background-color: #222222;
   overflow: scroll;
   .genre__name {
     height: 30px;
@@ -120,7 +106,7 @@ i.fas.fa-plus {
       font-size: 13px;
       font-family: sans-serif;
       margin-left: 5px;
-      color: #4169e1;
+      color: #f5f5f3;
     }
   }
   .contents-title-link {
@@ -202,9 +188,9 @@ i.fas.fa-plus {
 
 .main-body {
   height: 100%;
-  width: 80%;
+  width: 82%;
   overflow: scroll;
-  background-color: #888888;
+  background-color: #222222;
 
   .explanation-text {
     margin: 50px 80px;
@@ -224,33 +210,33 @@ i.fas.fa-plus {
 
     &__genre__name {
       margin-bottom: 20px;
-      border: 1px solid gray;
+      border: 1px solid #222222;
       border-radius: 4px;
       padding: 10px;
     }
     &__contents__title {
       margin-bottom: 20px;
-      border: 1px solid gray;
+      border: 1px solid #222222;
       border-radius: 4px;
       padding: 10px;
     }
     &__contents__comment {
       margin-bottom: 20px;
-      border: 1px solid gray;
+      border: 1px solid #222222;
       border-radius: 4px;
       padding: 10px;
     }
     &__contents__start-time {
       height: 50px;
       margin-bottom: 20px;
-      border: 1px solid gray;
+      border: 1px solid #222222;
       border-radius: 4px;
       padding: 5px;
     }
     &__contents__display {
       height: 50px;
       margin-bottom: 20px;
-      border: 1px solid gray;
+      border: 1px solid #222222;
       border-radius: 4px;
       padding: 5px;
     }
@@ -258,7 +244,7 @@ i.fas.fa-plus {
       width: 60px;
       line-height: 35px;
       font-size: 16px;
-      border-radius: 4px;
+      border-radius: 8px;
       border: 1px solid gray;
       margin: 0 auto;
       background-color: #0c161c;
@@ -270,7 +256,7 @@ i.fas.fa-plus {
     height: 70%;
     width: 100%;
     display: flex;
-    padding: 20px 10px;
+    padding: 20px;
     justify-content: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
@@ -302,7 +288,7 @@ i.fas.fa-plus {
         color: #aaaaaa;
       }
       &__edit-link {
-        color: #000055;
+        color: #0000cc;
         margin-left: 5px;
         text-decoration: none;
       }
@@ -312,6 +298,81 @@ i.fas.fa-plus {
       }
     }
   }
+}
+
+.contents-tb {
+  width: 100%;
+  color: #f5f5f3;
+  border: 1px solid #f5f5f3;
+}
+
+.content-tr {
+  width: 100%;
+  border: 1px solid #f5f5f3;
+}
+
+.content-th-title {
+  width: 20%;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 10px;
+  text-align: center;
+  border: 1px solid #f5f5f3;
+}
+
+.content-th-memo {
+  width: 37%;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 10px;
+  text-align: center;
+  border: 1px solid #f5f5f3;
+}
+
+.content-th-start_time {
+  width: 18%;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 10px;
+  text-align: center;
+  border: 1px solid #f5f5f3;
+}
+
+.content-th-updated_at {
+  width: 25%;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.content-title {
+  width: 20%;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border: 1px solid #f5f5f3;
+}
+
+.content-comment {
+  width: 37%;
+  padding: 5px 10px;
+  border: 1px solid #f5f5f3;
+}
+
+.content-start_time {
+  width: 18%;
+  padding: 5px 10px;
+  font-size: 12px;
+  border: 1px solid #f5f5f3;
+  text-align: center;
+}
+
+.content-updated_at {
+  width: 25%;
+  padding: 5px 10px;
+  font-size: 12px;
+  text-align: center;
 }
 
 .explanation-info {
