@@ -9,9 +9,15 @@ class GenresController < ApplicationController
   def create
     @genre = Genre.new(genre_params)
     if @genre.save
-      redirect_to root_path, notice: '作成しました'
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: '作成しました' }
+        format.json
+      end
     else 
-      redirect_to root_path, alert: '入力に誤りがあります'
+      @genres = current_user&.genres
+      @content = Content.new
+      flash.now[:alert] = '入力に誤りがあります'
+      render :index
     end
   end
 

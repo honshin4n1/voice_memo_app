@@ -1,43 +1,44 @@
 .side-bar
-  %ul.menu-list
+  .menu-container
     - if user_signed_in?
-      %li.menu-list__genres
-        ジャンル
-      %li.menu-list__genres-form
-        = button_tag type: 'button', class: 'mic-btn', id: 'genre-btn' do
-          = icon('fa', 'microphone')
-        = button_tag type: 'button', class: 'mic-btn', id: 'genre-btn-stop' do
-          = icon('far', 'stop-circle')
-        = form_for @genre do |f|
-          = f.text_field :name, class: 'genre-form', id: 'genre__name', placeholder: 'ジャンル追加'
-          = button_tag type: 'submit', class: 'submit-btn post' do
-            = icon('fas', 'plus')
-        
+      %ul.genre-list
+        %li.genre-list__info
+          ジャンル
+        %li.genre-list__genres-form
+          = button_tag type: 'button', class: 'mic-btn',  id: 'genre-btn' do
+            = icon('fa', 'microphone')
+          = button_tag type: 'button', class: 'mic-btn',  id: 'genre-btn-stop' do
+            = icon('far', 'stop-circle')
+          = form_for @genre do |f|
+            = f.text_field :name, class: 'genre-form',  id: 'genre__name', placeholder: 'ジャンル追加'
+            = button_tag type: 'submit', class:   'submit-btn post', id: 'submit-genre' do
+              = icon('fas', 'plus')
         - @genres.each do |genre|
-          - if current_user.id == genre.user_id
-            %li.menu-list__link
-              = link_to "#{genre.name}", genre_contents_path(genre), class: 'menu-list__link--name'
-      %li.menu-list__info
-        MENU
-      %li.menu-list__link
-        = link_to root_path, class: 'menu-list__link--name' do
-          = icon('fas', 'home')
-          ホーム
-      %li.menu-list__link
-        = link_to user_path(current_user.id), class: 'menu-list__link--name' do
-          = icon('fas', 'calendar-alt')
-          カレンダー
-      %li.menu-list__link
-        = link_to "アカウント", '#', class: 'menu-list__link--name'
-      %li.menu-list__link
-        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'menu-list__link--name'
-      %li.menu-list__link
-        =link_to "TOP", '#Top', class: 'menu-list__link--name'
+          %li.genre-list__link
+            = link_to "#{genre.name}", genre_contents_path(genre), class: 'genre-list__link--name'
+      %ul.menu-list
+        %li.menu-list__info
+          MENU
+        %li.menu-list__link
+          = link_to root_path, class:   'menu-list__link--name' do
+            = icon('fas', 'home')
+            ホーム
+        %li.menu-list__link
+          = link_to user_path(current_user.id), class:  'menu-list__link--name' do
+            = icon('fas', 'calendar-alt')
+            カレンダー
+        %li.menu-list__link
+          = link_to "アカウント", '#', class:   'menu-list__link--name'
+        %li.menu-list__link
+          = link_to "ログアウト",   destroy_user_session_path, method: :delete,   class: 'menu-list__link--name'
+        %li.menu-list__link
+          =link_to "TOP", '#Top', class:  'menu-list__link--name'
     - else
-      %li.menu-list__link
-      %li.menu-list__link
-        = link_to "新規登録", new_user_registration_path, class: 'menu-list__link--name' 
-      %li.menu-list__link
-        = link_to "ログイン", new_user_session_path, class: 'menu-list__link--name'  
-
+      %ul.menu-list
+        %li.menu-list__link
+        %li.menu-list__link
+          = link_to "新規登録",   new_user_registration_path, class:  'menu-list__link--name' 
+        %li.menu-list__link
+          = link_to "ログイン", new_user_session_path,  class: 'menu-list__link--name' 
+     
 
