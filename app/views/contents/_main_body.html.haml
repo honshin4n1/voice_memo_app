@@ -53,7 +53,6 @@
               = content.start_time.strftime("%Y/%m/%d (%a) %H:%M")
             %td.content-updated_at
               = content.updated_at.strftime("%Y/%m/%d (%a) %H:%M")
-              更新
               = link_to edit_genre_content_path(@genre, content), class: 'content__edit-link' do
                 = icon('fas', 'edit')
               = link_to "/genres/#{@genre.id}/contents/#{content.id}", method: :delete, remote: true, class:  'content__delete-link', id: 'delete-btn', data: {content_id: content.id} do
