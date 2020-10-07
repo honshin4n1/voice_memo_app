@@ -9,24 +9,29 @@
         ボタンを押してください
       .contents
         %table.contents-tb
-          %tr.content-tr
-            %th.content-th-title
-              TITLE
-            %th.content-th-memo
-              MEMO
-            %th.content-th-start_time
-              作成/予定日時
-            %th.content-th-updated_at
-              更新日
-          - @contents.each do |content|
+          %thead
             %tr.content-tr
-              %td.content-title
-                = content.title
-              %td.content-comment
-                = content.comment
-              %td.content-start_time
-                = content.start_time.strftime("%Y/%m/%d (%a) %H:%M")
-              %td.content-updated_at
-                = content.updated_at.strftime("%Y/%m/%d (%a) %H:%M")
-                更新
+              %th.content-th-genre
+                GENRE
+              %th.content-th-title
+                TITLE
+              %th.content-th-memo
+                MEMO
+              %th.content-th-start_time
+                日時
+              %th.content-th-updated_at
+                更新日
+          %tbody
+            - @contents.each do |content|
+              %tr.content-tr
+                %td.content-genre
+                  = link_to "#{content.genre.name}", genre_contents_path(content.genre.id) 
+                %td.content-title
+                  = content.title
+                %td.content-comment
+                  = content.comment
+                %td.content-start_time
+                  = content.start_time.strftime("%Y/%m/%d (%a) %H:%M")
+                %td.content-updated_at
+                  = content.updated_at.strftime("%Y/%m/%d (%a) %H:%M")
   = render "genres/footer"

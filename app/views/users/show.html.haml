@@ -3,11 +3,11 @@
   = month_calendar events: @contents do |date, contents|
     = date.day
     - contents.each do |content|
-      .contents-title
       - if user_signed_in? && current_user.id == content.user_id && content.display == 0
-        #content-start-time
-          = content.start_time.strftime("%H:%M")
-        = link_to "#{content.title}", genre_contents_path(content.genre.id), id: "content-title"
-        = link_to "/genres/#{content.genre.id}/contents/#{content.id}", method: :delete, id: 'content-delete-link' do
-          = icon('far', 'trash-alt')
+        .contents-title{data: {content: {id: content.id}}}
+          #content-start-time
+            = content.start_time.strftime("%H:%M")
+          = link_to "#{content.title}", genre_contents_path(content.genre.id), id: "content-title"
+          = link_to "/genres/#{content.genre.id}/contents/#{content.id}", method: :delete, remote: true, id: 'content-delete-link', data: {content_id: content.id} do
+            = icon('far', 'trash-alt')
   = render "genres/footer"

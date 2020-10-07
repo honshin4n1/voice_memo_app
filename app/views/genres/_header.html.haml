@@ -1,5 +1,5 @@
 .header
-  .header__menu
+  .header__menu#top-menu
     = icon('fas', 'bars')
   .header__title
     = link_to "Voice Memo", root_path, class: "header__title__link"
@@ -13,6 +13,6 @@
       .header__search--form
         = form_for(@content, url: contents_searches_path, local: true, method: :get, class: "search-form") do |f|
           = f.text_field :keyword, class: 'header__search__contents__title', id: 'search__title', placeholder: 'タイトル検索'
-          = button_tag type: 'submit', class: 'submit-btn search' do
+          = button_tag type: 'submit', class: 'submit-btn search', id: 'submit-search' do
             = icon('fa', 'search')
             
