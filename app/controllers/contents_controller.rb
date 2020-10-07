@@ -10,9 +10,15 @@ class ContentsController < ApplicationController
   def create
     @content = Content.new(content_params)
     if @content.save
-      redirect_to genre_contents_path(@genre), notice: '作成しました'
+      respond_to do |format|
+        format.html { redirect_to genre_contents_path(@genre), notice: '作成しました' }
+        format.json
+      end
     else
-      redirect_to genre_contents_path(@genre), alert: '入力に誤りがあります'
+      @content = Content.new
+      @contents = @genre.contents.includes(:user)
+      flash.now[:alert] = '入力に誤りがあります'
+      render :index
     end
   end
 
@@ -32,7 +38,10 @@ class ContentsController < ApplicationController
   def destroy
     content = Content.find(params[:id])
     content.destroy
-    redirect_to genre_contents_path(@genre), notice: '削除しました'
+    respond_to do |format|
+      format.html { redirect_to genre_contents_path(@genre), notice: '削除しました' }
+      format.json
+    end
   end
 
   private

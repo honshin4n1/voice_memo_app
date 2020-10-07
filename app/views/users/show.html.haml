@@ -3,7 +3,7 @@
   = month_calendar events: @contents do |date, contents|
     = date.day
     - contents.each do |content|
-      .contents-title
+      .contents-title{data: {content: {id: content.id}}}
       - if user_signed_in? && current_user.id == content.user_id && content.display == 0
         #content-start-time
           = content.start_time.strftime("%H:%M")

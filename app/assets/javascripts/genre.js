@@ -40,6 +40,7 @@ window.addEventListener(
   false
 );
 
+// genre投稿のAjax //
 $(function () {
   function buildHTML(genre) {
     var html = `
@@ -48,29 +49,72 @@ $(function () {
     </li> `;
     return html;
   }
-  $("#new_genre").on("submit", function (e) {
-    e.preventDefault();
-    var formData = new FormData(this);
-    var url = $(this).attr("action");
-    $.ajax({
-      url: url,
-      type: "POST",
-      data: formData,
-      dataType: "json",
-      processData: false,
-      contentType: false,
-    })
-      .done(function (data) {
-        var html = buildHTML(data);
-        $(".genre-list").append(html);
-        $(".genre-form").val(" ");
-        $(".submit-btn").prop("disabled", false);
+  $("#submit-genre").on("click", function () {
+    $("#new_genre").on("submit", function (e) {
+      e.preventDefault();
+      var formData = new FormData(this);
+      var url = $(this).attr("action");
+      $.ajax({
+        url: url,
+        type: "POST",
+        data: formData,
+        dataType: "json",
+        processData: false,
+        contentType: false,
       })
-      .fail(function () {
-        alert("入力に誤りがあるか、投稿に失敗しました。");
-      });
+        .done(function (data) {
+          alert("追加しました。");
+          var html = buildHTML(data);
+          $(".genre-list").append(html);
+          $("#new_genre")[0].reset();
+          $("#submit-genre").prop("disabled", false);
+          $("#submit-genre").off("click");
+        })
+        .fail(function () {
+          alert("エラー！作成に失敗しました。");
+          $("#new_genre").off("submit");
+          $("#submit-genre").prop("disabled", false);
+        });
+    });
   });
 });
+
+// genre編集のAjax //
+// $(function () {
+//   function buildHTML(genre) {
+//     var html = `
+//     <li class="genre-list__link">
+//     <a class="genre-list__link--name" href="/genres/${genre.id}/contents">${genre.name}</a>
+//     </li> `;
+//     return html;
+//   }
+//   $("#submit-genre").click(function () {
+//     $("#new_genre").submit(function (e) {
+//       e.preventDefault();
+//       var formData = new FormData(this);
+//       var url = $(this).attr("action");
+//       $.ajax({
+//         url: url,
+//         type: "POST",
+//         data: formData,
+//         dataType: "json",
+//         processData: false,
+//         contentType: false,
+//       })
+//         .done(function (data) {
+//           alert("追加します。");
+//           var html = buildHTML(data);
+//           $(".genre-list").append(html);
+//           $("#new_genre")[0].reset();
+//           $("#submit-genre").prop("disabled", false);
+//         })
+//         .fail(function () {
+//           alert("作成に失敗しました。");
+//           $("#submit-genre").prop("disabled", false);
+//         });
+//     });
+//   });
+// });
 
 $(function () {
   //マウスを乗せたら発動

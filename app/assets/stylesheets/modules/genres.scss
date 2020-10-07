@@ -61,6 +61,7 @@
   background-color: #0c161c;
   border-radius: 4px;
   cursor: pointer;
+  outline: none;
 }
 
 .submit-btn.search {
@@ -128,6 +129,7 @@ i.fas.fa-plus {
       background-color: #0c161c;
       color: #f9fafa;
       cursor: pointer;
+      outline: none;
     }
   }
 }
@@ -140,6 +142,7 @@ i.fas.fa-plus {
   border-radius: 4px;
   cursor: pointer;
   color: #f9fafa;
+  outline: none;
 }
 
 #search-btn {
@@ -166,6 +169,10 @@ i.fas.fa-plus {
   width: 100%;
   background-color: #0c161c;
   color: #f9fafa;
+  &__genres {
+    font-size: 20px;
+    font-weight: bold;
+  }
   &__info {
     font-size: 20px;
     font-weight: bold;
@@ -325,12 +332,12 @@ i.fas.fa-plus {
 .contents-tb {
   width: 100%;
   color: #f5f5f3;
-  border: 1px solid #f5f5f3;
+  margin-bottom: 50px;
 }
 
 .content-tr {
   width: 100%;
-  border: 1px solid #f5f5f3;
+  border: 1px solid #555555;
 }
 
 .content-th-title {
@@ -339,7 +346,7 @@ i.fas.fa-plus {
   font-weight: bold;
   padding: 5px 10px;
   text-align: center;
-  border: 1px solid #f5f5f3;
+  border: 1px solid #555555;
 }
 
 .content-th-memo {
@@ -348,7 +355,7 @@ i.fas.fa-plus {
   font-weight: bold;
   padding: 5px 10px;
   text-align: center;
-  border: 1px solid #f5f5f3;
+  border: 1px solid #555555;
 }
 
 .content-th-start_time {
@@ -357,7 +364,7 @@ i.fas.fa-plus {
   font-weight: bold;
   padding: 5px 10px;
   text-align: center;
-  border: 1px solid #f5f5f3;
+  border: 1px solid #555555;
 }
 
 .content-th-updated_at {
@@ -373,20 +380,20 @@ i.fas.fa-plus {
   font-size: 18px;
   font-weight: bold;
   padding: 5px 10px;
-  border: 1px solid #f5f5f3;
+  border: 1px solid #555555;
 }
 
 .content-comment {
   width: 37%;
   padding: 5px 10px;
-  border: 1px solid #f5f5f3;
+  border: 1px solid #555555;
 }
 
 .content-start_time {
   width: 18%;
   padding: 5px 10px;
   font-size: 12px;
-  border: 1px solid #f5f5f3;
+  border: 1px solid #555555;
   text-align: center;
 }
 
