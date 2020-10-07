@@ -96,7 +96,6 @@ $(function () {
       <td class="content-start_time">${content.start_time}</td>
       <td class="content-updated_at">
         ${content.updated_at}
-        更新
         <a class="content__edit-link" href="/genres/${content.genre_id}/contents/${content.id}/edit">
           <i class="fas fa-edit"></i>
         </a>
