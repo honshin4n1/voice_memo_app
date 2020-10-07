@@ -131,6 +131,7 @@ $(function () {
           var hours = now.getHours();
           var minites = now.getMinutes();
           $(".content-tbody").prepend(html);
+          $(".new_content").off("submit");
           $("#contents__title").val("");
           $("#contents__comment").val("");
           $("#content_display").val("");
@@ -158,7 +159,6 @@ $(function () {
     var deleteData = $(this);
     var contentID = $(this).data("content-id");
     var url = $(this).attr("href");
-    console.log(contentID);
     if (!confirm("削除しますか？")) {
       return false;
     } else {
@@ -176,8 +176,6 @@ $(function () {
         })
         .fail(function () {
           alert("エラー");
-          // $(".new_content").off("submit");
-          // $("#submit-content").prop("disabled", false);
         });
     }
   });
@@ -185,10 +183,29 @@ $(function () {
 
 // calendar内のcontent削除 //
 $(function () {
-  $(".simple-calendar").on("click", "#content-delete-link", function () {
+  $(".simple-calendar").on("click", "#content-delete-link", function (e) {
+    e.preventDefault();
+    var deleteData = $(this);
+    var contentID = $(this).data("content-id");
+    var url = $(this).attr("href");
     if (!confirm("削除しますか？")) {
       return false;
     } else {
+      $.ajax({
+        url: url,
+        type: "DELETE",
+        data: { id: contentID },
+        dataType: "json",
+        processData: false,
+        contentType: false,
+      })
+        .done(function () {
+          alert("削除しました。");
+          deleteData.parents(".contents-title").remove();
+        })
+        .fail(function () {
+          alert("エラー");
+        });
     }
   });
 });
