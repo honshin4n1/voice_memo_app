@@ -92,22 +92,20 @@ i.fas.fa-plus {
   width: 18%;
   background-color: #222222;
   overflow: scroll;
-  .genre__name {
-    height: 30px;
-    width: 100%;
-    margin: 30px;
-    line-height: 30px;
-    font-size: 25px;
-    font-family: "arial unicode ms";
-    &__list {
-      text-decoration: none;
-      color: black;
-    }
+  .genre-name {
     &__edit {
-      font-size: 13px;
+      font-size: 15px;
       font-family: sans-serif;
       margin-left: 5px;
       color: #f5f5f3;
+      text-decoration: none;
+    }
+    &__delete {
+      font-size: 15px;
+      font-family: sans-serif;
+      margin-left: 5px;
+      color: #f5f5f3;
+      text-decoration: none;
     }
   }
   .contents-title-link {

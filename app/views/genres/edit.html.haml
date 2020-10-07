@@ -23,7 +23,7 @@
           - if current_user.id == @genre.user.id
             %li.menu-list__genres
               = @genre.name
-              = link_to edit_genre_path(@genre), class: 'genre__name__edit' do
+              -# = link_to edit_genre_path(@genre), class: 'genre__name__edit' do
                 -# = icon('fas', 'edit')
                 -# = icon('far', 'trash-alt')
             %li.menu-list__genres-form
@@ -32,8 +32,8 @@
               = button_tag type: 'button', class: 'mic-btn', id: 'genre-btn-stop' do
                 = icon('far', 'stop-circle')
               = form_for @genre do |f|
-                = f.text_field :name, class: 'genre-form', id: 'genre__name', placeholder: 'ジャンル追加'
-                = button_tag type: 'submit', class: 'submit-btn post' do
+                = f.text_field :name, class: 'genre-form', id: 'genre__name', placeholder: 'ジャンル編集'
+                = button_tag type: 'submit', class: 'submit-btn post', id: 'genre-edit-btn' do
                   = icon('fas', 'plus')
             %li.menu-list__link
               = link_to root_path, class: 'menu-list__link--name' do
