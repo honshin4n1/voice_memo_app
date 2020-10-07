@@ -71,7 +71,7 @@ $(function () {
           $("#submit-genre").off("click");
         })
         .fail(function () {
-          alert("エラー！作成に失敗しました。");
+          alert("エラー！\n作成に失敗しました。");
           $("#new_genre").off("submit");
           $("#submit-genre").prop("disabled", false);
         });
@@ -79,42 +79,20 @@ $(function () {
   });
 });
 
-// genre編集のAjax //
-// $(function () {
-//   function buildHTML(genre) {
-//     var html = `
-//     <li class="genre-list__link">
-//     <a class="genre-list__link--name" href="/genres/${genre.id}/contents">${genre.name}</a>
-//     </li> `;
-//     return html;
-//   }
-//   $("#submit-genre").click(function () {
-//     $("#new_genre").submit(function (e) {
-//       e.preventDefault();
-//       var formData = new FormData(this);
-//       var url = $(this).attr("action");
-//       $.ajax({
-//         url: url,
-//         type: "POST",
-//         data: formData,
-//         dataType: "json",
-//         processData: false,
-//         contentType: false,
-//       })
-//         .done(function (data) {
-//           alert("追加します。");
-//           var html = buildHTML(data);
-//           $(".genre-list").append(html);
-//           $("#new_genre")[0].reset();
-//           $("#submit-genre").prop("disabled", false);
-//         })
-//         .fail(function () {
-//           alert("作成に失敗しました。");
-//           $("#submit-genre").prop("disabled", false);
-//         });
-//     });
-//   });
-// });
+// genre削除 //
+
+$(function () {
+  $("#genre-delete-link").on("click", function (e) {
+    e.preventDefault();
+    if (
+      !confirm("関連するコンテンツがすべて削除されます！\n本当に削除しますか？")
+    ) {
+      return false;
+    } else {
+      alert("削除しました。");
+    }
+  });
+});
 
 $(function () {
   //マウスを乗せたら発動

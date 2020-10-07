@@ -150,6 +150,8 @@ $(function () {
   });
 });
 
+// content編集 //
+
 // content削除 //
 $(function () {
   $(".contents").on("click", "#delete-btn", function (e) {

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :contents do
     resources :searches, only: :index
   end
-  resources :genres, except: [:destroy, :show] do
+  resources :genres, except: [:show] do
     resources :contents, except: [:show]
   end
   resources :users, only: [:show]

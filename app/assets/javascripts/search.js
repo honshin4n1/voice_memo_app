@@ -41,3 +41,58 @@ window.addEventListener(
   },
   false
 );
+
+// 検索 //
+
+// $(function () {
+//   function buildHTML(content) {
+//     var html = `
+//     <tr class="content-tr">
+//       <td class="content-genre">
+//         <a href="/genres/${genre_id}/contents">${genre_name}</a>
+//       </td>
+//       <td class="content-title">
+//         ${content.title}
+//       </td>
+//       <td class="content-comment">
+//         ${content.comment}
+//       </td>
+//       <td class="content-start_time">
+//         ${content.start_time}
+//       </td>
+//       <td class="content-updated_at">
+//         ${content.updated_at}
+//       </td>
+//     </tr>
+//     `;
+//     return html;
+//   }
+//   $("#submit-search").on("click", function () {
+//     $(".new_content").on("submit", function (e) {
+//       e.preventDefault();
+//       var formData = $(this).val();
+//       var url = $(this).attr("action");
+//       console.log(formData);
+//       $.ajax({
+//         url: url,
+//         type: "GET",
+//         data: formData,
+//         dataType: "json",
+//         processData: false,
+//         contentType: false,
+//       })
+//         .done(function (data) {
+//           var html = buildHTML(data);
+//           $("#content-tbody-search").append(html);
+//           $("#new_content")[0].reset();
+//           $("#submit-search").prop("disabled", false);
+//           $("#submit-search").off("click");
+//         })
+//         .fail(function () {
+//           alert("エラー！\n作成に失敗しました。");
+//           $("#new_content").off("submit");
+//           $("#submit-search").prop("disabled", false);
+//         });
+//     });
+//   });
+// });

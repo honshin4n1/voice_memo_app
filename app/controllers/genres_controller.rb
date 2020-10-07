@@ -31,10 +31,18 @@ class GenresController < ApplicationController
     if @genre.update(genre_params)
       redirect_to genre_contents_path(@genre), notice: '更新しました'
     else
+      @content = Content.new
+      @genre = Genre.find(params[:id])
+      flash.now[:alert] = '入力に誤りがあります'
       render :edit
     end
   end
 
+  def destroy
+    @genre = Genre.find(params[:id])
+    @genre.destroy
+    redirect_to root_path
+  end
 
 
   private
