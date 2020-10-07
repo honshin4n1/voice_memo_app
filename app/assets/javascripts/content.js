@@ -130,7 +130,6 @@ $(function () {
           var hours = now.getHours();
           var minites = now.getMinutes();
           $(".content-tbody").prepend(html);
-          $(".new_content").off("submit");
           $("#contents__title").val("");
           $("#contents__comment").val("");
           $("#content_display").val("");
@@ -139,8 +138,8 @@ $(function () {
           $("#content_start_time_3i").val(day);
           $("#content_start_time_4i").val(hours);
           $("#content_start_time_5i").val(minites);
+          $(".new_content").off("submit");
           $("#submit-content").prop("disabled", false);
-          $("#submit-content").off("click");
         })
         .fail(function () {
           alert("エラー！作成に失敗しました。");
