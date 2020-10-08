@@ -85,8 +85,9 @@ i.fas.fa-plus {
 
 .container {
   flex: 1;
-  height: 100%;
+  height: 100vh;
   display: flex;
+  background-color: #222222;
   position: relative;
   left: 0;
   overflow-x: hidden;
@@ -229,14 +230,13 @@ i.fas.fa-plus {
 }
 
 .main-body {
-  height: 100%;
+  height: calc(100% - 160px);
   width: 100%;
-  // overflow: scroll;
   background-color: #222222;
 
   .explanation-text {
     width: 60%;
-    margin: 50px 80px;
+    margin: 50px auto;
     color: red;
     text-align: center;
   }
@@ -246,8 +246,8 @@ i.fas.fa-plus {
   }
 
   .form-box {
-    width: 80%;
-    margin: 50px 100px 50px 200px;
+    width: 30%;
+    margin: 100px auto;
     #title-btn {
       margin-bottom: 10px;
     }
@@ -298,9 +298,10 @@ i.fas.fa-plus {
   }
   .contents {
     height: 70%;
-    width: 100%;
+    width: 80%;
     display: flex;
     padding: 20px;
+    margin: 0 auto;
     justify-content: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
@@ -440,19 +441,19 @@ i.fas.fa-plus {
 }
 
 .explanation-info {
-  margin-left: 100px;
+  margin: 0 auto;
   &__text {
     width: 60%;
     text-align: center;
     font-size: 25px;
     font-family: "arial unicode ms";
-    margin: 50px 20px;
+    margin: 50px auto;
     color: #f5f5f3;
   }
   &__img {
     width: 60%;
     text-align: center;
-    margin-bottom: 50px;
+    margin: 50px auto;
   }
   &__image {
     width: 300px;
