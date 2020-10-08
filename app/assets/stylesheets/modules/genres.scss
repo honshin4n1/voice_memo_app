@@ -6,6 +6,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .header {
@@ -83,15 +85,21 @@ i.fas.fa-plus {
 
 .container {
   flex: 1;
-  height: 100vh;
+  height: 100%;
   display: flex;
+  position: relative;
+  left: 0;
+  overflow-x: hidden;
 }
 
 .side-bar {
   height: 100%;
-  width: 18%;
-  background-color: #222222;
-  overflow: scroll;
+  width: 250px;
+  position: relative;
+  position: fixed;
+  top: 0;
+  left: -240px;
+  background-color: #0c161c;
   .genre-name {
     &__edit {
       font-size: 15px;
@@ -132,6 +140,12 @@ i.fas.fa-plus {
   }
 }
 
+.side-bar-top {
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+}
+
 .mic-btn {
   margin: 5px;
   padding-top: 5px;
@@ -151,13 +165,16 @@ i.fas.fa-plus {
   display: block;
 }
 
-.menu-container {
-  height: 100%;
-  width: 100%;
-  background-color: #0c161c;
-  border-top: 1px solid #aaaaaa;
-  border-bottom: 1px solid #aaaaaa;
-}
+// .menu-container {
+//   height: 100%;
+//   width: 100%;
+// position: fixed;
+// left: -240px;
+// width: 240px;
+//   background-color: #0c161c;
+//   border-top: 1px solid #aaaaaa;
+//   border-bottom: 1px solid #aaaaaa;
+// }
 .menu-list li {
   color: #f9fafa;
   padding: 10px 20px;
@@ -213,8 +230,8 @@ i.fas.fa-plus {
 
 .main-body {
   height: 100%;
-  width: 82%;
-  overflow: scroll;
+  width: 100%;
+  // overflow: scroll;
   background-color: #222222;
 
   .explanation-text {
@@ -442,11 +459,14 @@ i.fas.fa-plus {
     height: 300px;
   }
 }
+
 .search-icon {
   width: 10px;
   height: 10px;
 }
+
 .footer {
+  width: 100%;
   height: 80px;
   line-height: 80px;
   text-align: center;

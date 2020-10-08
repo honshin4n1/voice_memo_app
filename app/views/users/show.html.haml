@@ -1,5 +1,6 @@
 .wrapper
   = render "genres/header"
+  = render "genres/side_bar"
   = month_calendar events: @contents do |date, contents|
     = date.day
     - contents.each do |content|
