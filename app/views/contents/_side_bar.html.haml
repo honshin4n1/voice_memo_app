@@ -2,27 +2,34 @@
   .side-bar-top
     .header__menu
       = icon('fa', 'times', id: "top-menu")
-  %ul.menu-list
+  %ul.genre-list
     - if current_user.id == @genre.user.id
-      %li.menu-list__genres
+      %li.genre-list__info
         = @genre.name
         = link_to edit_genre_path(@genre), class: 'genre-name__edit', id: 'genre-edit-link' do
           = icon('fas', 'edit')
         = link_to "/genres/#{@genre.id}", method: :delete, class: 'genre-name__delete', id: "genre-delete-link" do
           = icon('far', 'trash-alt')
-      %li.menu-list__link
-        = link_to root_path, class: 'menu-list__link--name' do
-          = icon('fas', 'home')
-          ホーム
-      %li.menu-list__link
-        = link_to user_path(current_user.id), class: 'menu-list__link--name' do
-          = icon('fas', 'calendar-alt')
-          カレンダー
-      %li.menu-list__link
-        = link_to "アカウント", '#', class: 'menu-list__link--name'
-      %li.menu-list__link
-        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'menu-list__link--name'
-      %li.menu-list__link
-        =link_to "TOP", '#Top', class: 'menu-list__link--name'
+    - @genres.each do |genre|
+      -if @genre != genre
+        %li.genre-list__link
+          = link_to "#{genre.name}", genre_contents_path(genre), class: 'genre-list__link--name'
+  %ul.menu-list
+    %li.menu-list__info
+      MENU
+    %li.menu-list__link
+      = link_to root_path, class: 'menu-list__link--name' do
+        = icon('fas', 'home')
+        ホーム
+    %li.menu-list__link
+      = link_to user_path(current_user.id), class: 'menu-list__link--name' do
+        = icon('fas', 'calendar-alt')
+        カレンダー
+    %li.menu-list__link
+      = link_to "アカウント", '#', class: 'menu-list__link--name'
+    %li.menu-list__link
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'menu-list__link--name'
+    %li.menu-list__link
+      =link_to "TOP", '#Top', class: 'menu-list__link--name'
   
   
