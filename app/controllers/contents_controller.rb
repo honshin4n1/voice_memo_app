@@ -5,6 +5,7 @@ class ContentsController < ApplicationController
   def index
     @content = Content.new
     @contents = @genre.contents.includes(:user)
+    @genres = current_user&.genres
   end
 
   def create
