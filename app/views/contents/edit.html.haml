@@ -7,7 +7,7 @@
         ※音声入力するには
         = icon('fa', 'microphone')
         ボタンを押してください
-      .form-box
+      .content-edit-form
         = form_for [@genre, @content] do |f|
           .field-content
             = button_tag type: 'button', class: 'mic-btn', id: 'title-btn' do
@@ -15,24 +15,24 @@
             = button_tag type: 'button', class: 'mic-btn', id: 'title-btn-stop' do
               = icon('far', 'stop-circle')
             %br/
-            = f.text_field :title, class: 'form-box__contents__title', id: 'contents__title', placeholder: 'タイトル'
+            = f.text_field :title, class: 'content-edit-form__contents__title', id: 'contents__title', placeholder: 'タイトル'
           .field-content
             = button_tag type: 'button', class: 'mic-btn', id: 'comment-btn' do
               = icon('fa', 'microphone')
             = button_tag type: 'button', class: 'mic-btn', id: 'comment-btn-stop' do
               = icon('far', 'stop-circle')
             %br/
-            = f.text_area :comment, class: 'form-box__contents__comment', id: 'contents__comment', placeholder: 'メモ、コメント、   etc'
+            = f.text_area :comment, class: 'content-edit-form__contents__comment', id: 'contents__comment', placeholder: 'メモ、コメント、   etc'
           .field-content
             = icon('far', 'calendar-times')
             = f.label :start_time, "日時"
             %br/
-            = f.datetime_select :start_time, {}, class: 'form-box__contents__start-time'
+            = f.datetime_select :start_time, {}, class: 'content-edit-form__contents__start-time'
           .field-content
             = icon('fas', 'tags')
             = f.label :display, "カレンダーに表示"
             %br/
-            = f.select :display, [['表示する', 0], ['表示しない', 1]], {prompt:"選択してください"},  class:     'form-box__contents__display'
-          = f.submit '編集', class: 'form-box__new-memo'
+            = f.select :display, [['表示する', 0], ['表示しない', 1]], {prompt:"選択してください"},  class:     'content-edit-form__contents__display'
+          = f.submit '編集', class: 'content-edit-form__new-memo'
   = render "genres/footer"
   
