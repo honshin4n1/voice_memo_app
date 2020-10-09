@@ -15,7 +15,7 @@
   height: 80px;
   width: 100%;
   line-height: 80px;
-  background-color: #0c161c;
+  background-color: #ffa500;
   display: flex;
   justify-content: space-around;
   position: relative;
@@ -88,7 +88,7 @@ i.fas.fa-plus {
   flex: 1;
   height: 100vh;
   display: flex;
-  background-color: #222222;
+  background-color: #f6f6f4;
   position: relative;
   left: 0;
   overflow-x: hidden;
@@ -100,8 +100,8 @@ i.fas.fa-plus {
   position: relative;
   position: fixed;
   top: 0;
-  left: -240px;
-  background-color: #0c161c;
+  left: -250px;
+  background-color: #ffa500;
   .genre-name {
     &__edit {
       font-size: 15px;
@@ -129,7 +129,7 @@ i.fas.fa-plus {
 .menu-container {
   height: 100%;
   width: 250px;
-  background-color: #0c161c;
+  background-color: #ffa500;
 }
 
 .side-bar-top {
@@ -156,7 +156,7 @@ i.fas.fa-plus {
 
 .menu-list {
   width: 100%;
-  background-color: #0c161c;
+  background-color: #ffa500;
   color: #f9fafa;
   &__genres {
     font-size: 20px;
@@ -180,7 +180,7 @@ i.fas.fa-plus {
 
 .genre-list {
   width: 100%;
-  background-color: #0c161c;
+  background-color: #ffa500;
   color: #f9fafa;
   &__info {
     font-size: 20px;
@@ -205,7 +205,7 @@ i.fas.fa-plus {
 .main-body {
   height: calc(100% - 160px);
   width: 100%;
-  background-color: #222222;
+  background-color: #f6f6f4;
 
   .explanation-text {
     width: 60%;
@@ -219,10 +219,12 @@ i.fas.fa-plus {
   }
 
   #switch-btn {
+    border-radius: 4px;
     outline: none;
     display: block;
     margin-bottom: 20px;
-    background-color: #f5f5f3;
+    background-color: #0c161c;
+    color: #f5f5f3;
   }
 
   .form-box {
@@ -233,7 +235,7 @@ i.fas.fa-plus {
     position: absolute;
     top: 150px;
     left: 25%;
-    background-color: #f5f5f3;
+    background-color: #fff;
     display: none;
     label {
       color: #555555;
@@ -271,6 +273,7 @@ i.fas.fa-plus {
       padding: 5px;
       font-size: 15px;
       margin-bottom: 20px;
+      background-color: #f5f5f3;
     }
     #content_start_time_1i {
       margin-left: 20px;
@@ -284,13 +287,14 @@ i.fas.fa-plus {
       font-size: 15px;
       margin-left: 20px;
       margin-bottom: 20px;
+      background-color: #f5f5f3;
     }
     &__new-memo {
       width: 60px;
       line-height: 35px;
       font-size: 16px;
       border-radius: 8px;
-      border: 1px solid gray;
+      border: 1px solid #aaaaaa;
       margin-left: 20px;
       margin-bottom: 20px;
       background-color: #0c161c;
@@ -349,13 +353,13 @@ i.fas.fa-plus {
 
 .contents-tb {
   width: 100%;
-  color: #f5f5f3;
   margin-bottom: 50px;
+  background-color: #fff;
 }
 
 .content-tr {
   width: 100%;
-  border: 1px solid #555555;
+  border: 1px solid #aaaaaa;
 }
 
 .content-th-genre {
@@ -364,7 +368,7 @@ i.fas.fa-plus {
   font-weight: bold;
   padding: 5px 10px;
   text-align: center;
-  border: 1px solid #555555;
+  border: 1px solid #aaaaaa;
 }
 
 .content-th-title {
@@ -373,7 +377,7 @@ i.fas.fa-plus {
   font-weight: bold;
   padding: 5px 10px;
   text-align: center;
-  border: 1px solid #555555;
+  border: 1px solid #aaaaaa;
 }
 
 .content-th-memo {
@@ -382,7 +386,7 @@ i.fas.fa-plus {
   font-weight: bold;
   padding: 5px 10px;
   text-align: center;
-  border: 1px solid #555555;
+  border: 1px solid #aaaaaa;
 }
 
 .content-th-start_time {
@@ -391,7 +395,7 @@ i.fas.fa-plus {
   font-weight: bold;
   padding: 5px 10px;
   text-align: center;
-  border: 1px solid #555555;
+  border: 1px solid #aaaaaa;
 }
 
 .content-th-updated_at {
@@ -407,10 +411,10 @@ i.fas.fa-plus {
   font-size: 15px;
   text-align: center;
   padding: 5px;
-  border: 1px solid #555555;
+  border: 1px solid #aaaaaa;
   a {
     text-decoration: none;
-    color: #f5f5f3;
+    color: #aaaaaa;
   }
 }
 
@@ -418,20 +422,20 @@ i.fas.fa-plus {
   width: 20%;
   font-weight: bold;
   padding: 5px 10px;
-  border: 1px solid #555555;
+  border: 1px solid #aaaaaa;
 }
 
 .content-comment {
   width: 32%;
   padding: 5px 10px;
-  border: 1px solid #555555;
+  border: 1px solid #aaaaaa;
 }
 
 .content-start_time {
   width: 20%;
   padding: 5px;
   font-size: 14px;
-  border: 1px solid #555555;
+  border: 1px solid #aaaaaa;
   text-align: center;
 }
 
@@ -450,7 +454,6 @@ i.fas.fa-plus {
     font-size: 25px;
     font-family: "arial unicode ms";
     margin: 50px auto;
-    color: #f5f5f3;
   }
   &__img {
     width: 60%;
@@ -470,10 +473,10 @@ i.fas.fa-plus {
 
 .footer {
   width: 100%;
-  height: 80px;
-  line-height: 80px;
+  height: 50px;
+  line-height: 50px;
   text-align: center;
-  background-color: #0c161c;
+  background-color: #ffa500;
   a {
     color: #f9fafa;
   }
