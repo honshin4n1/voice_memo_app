@@ -3,9 +3,6 @@
     ※音声入力するには
     = icon('fa', 'microphone')
     ボタンを押してください
-  .content-form-switch
-    = button_tag type: 'button', id: 'switch-btn' do
-      タイトルを追加
   .form-box#contnet-form-box
     = form_for [@genre, @content] do |f|
       .field-content
@@ -34,6 +31,9 @@
         = f.select :display, [['表示する', 0], ['表示しない', 1]], {prompt:"選択してください"},  class: 'form-box__contents__display'
       = f.submit '登録', class: 'form-box__new-memo', id: 'submit-content'
   .contents
+    .content-form-switch
+      = button_tag type: 'button', id: 'switch-btn' do
+        タイトルを追加
     %table.contents-tb
       %thead
         %tr.content-tr
