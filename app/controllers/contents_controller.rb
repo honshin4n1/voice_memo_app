@@ -25,6 +25,7 @@ class ContentsController < ApplicationController
 
   def edit
     @content = Content.find(params[:id])
+    @genres = current_user&.genres
   end
 
   def update
