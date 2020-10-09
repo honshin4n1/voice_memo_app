@@ -99,7 +99,7 @@ $(function () {
   $(".genre-list__link").hover(
     function () {
       //マウスを乗せたら色が変わる
-      $(this).css("background-color", "#333333");
+      $(this).css("background-color", "#ff8c00");
     },
     function () {
       //色指定を空欄にすれば元の色に戻る
@@ -113,7 +113,7 @@ $(function () {
   $(".menu-list__link").hover(
     function () {
       //マウスを乗せたら色が変わる
-      $(this).css("background-color", "#333333");
+      $(this).css("background-color", "#ff8c00");
     },
     function () {
       //色指定を空欄にすれば元の色に戻る
