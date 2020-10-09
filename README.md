@@ -20,8 +20,9 @@ Web Speech APIによりChrome環境では音声入力が可能です。
 
 # Sample
 
-[![Image from Gyazo](https://i.gyazo.com/f33fbde1e96058fe55022cefcdb4b353.gif)](https://gyazo.com/f33fbde1e96058fe55022cefcdb4b353)  
-[![Image from Gyazo](https://i.gyazo.com/0bf71fd1eec62ef96b349ac22b608055.gif)](https://gyazo.com/0bf71fd1eec62ef96b349ac22b608055)
+[![Image from Gyazo](https://i.gyazo.com/55f01acd3a3d95ca3a6f4e6201c45a2d.gif)](https://gyazo.com/55f01acd3a3d95ca3a6f4e6201c45a2d) 
+[![Image from Gyazo](https://i.gyazo.com/ad066160fc2759937871a2910ea70cf5.gif)](https://gyazo.com/ad066160fc2759937871a2910ea70cf5)
+[![Image from Gyazo](https://i.gyazo.com/511c54ef013bf8f58fd85e0abc7cf6cd.gif)](https://gyazo.com/511c54ef013bf8f58fd85e0abc7cf6cd)
 
 # 機能
 
