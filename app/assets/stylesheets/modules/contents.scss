@@ -1,3 +1,72 @@
+.content-edit-form {
+  width: 40%;
+  margin: 0px auto;
+  margin-bottom: 50px;
+  border: 1px solid #aaaaaa;
+  background-color: #f5f5f3;
+  label {
+    color: #555555;
+  }
+  #title-btn {
+    margin-bottom: 10px;
+  }
+  &__contents__title {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 3px 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #aaaaaa;
+    background-color: #f5f5f3;
+  }
+  &__contents__comment {
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 16px;
+    padding: 3px 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #aaaaaa;
+    background-color: #f5f5f3;
+  }
+  &__contents__start-time {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #aaaaaa;
+    height: 50px;
+    padding: 5px;
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  #content_start_time_1i {
+    margin-left: 20px;
+  }
+  &__contents__display {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #aaaaaa;
+    height: 50px;
+    padding: 5px;
+    font-size: 15px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  &__new-memo {
+    width: 60px;
+    line-height: 35px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid gray;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    background-color: #0c161c;
+    color: #f9fafa;
+    cursor: pointer;
+  }
+}
+
 .simple-calendar {
   width: 90%;
   height: 100%;
