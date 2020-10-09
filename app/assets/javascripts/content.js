@@ -209,3 +209,11 @@ $(function () {
     }
   });
 });
+
+// formの表示 //
+$(function () {
+  $("#switch-btn").on("click", function (e) {
+    e.preventDefault();
+    $(".form-box").toggle(1000);
+  });
+});

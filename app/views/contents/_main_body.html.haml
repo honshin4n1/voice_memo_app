@@ -3,7 +3,10 @@
     ※音声入力するには
     = icon('fa', 'microphone')
     ボタンを押してください
-  .form-box
+  .content-form-switch
+    = button_tag type: 'button', id: 'switch-btn' do
+      タイトルを追加
+  .form-box#contnet-form-box
     = form_for [@genre, @content] do |f|
       .field-content
         = button_tag type: 'button', class: 'mic-btn', id: 'title-btn' do
