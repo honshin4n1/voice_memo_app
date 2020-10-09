@@ -1,17 +1,20 @@
 * {
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 .wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .header {
-  height: 80px;
+  height: 100px;
   width: 100%;
-  line-height: 80px;
+  line-height: 100px;
   background-color: #0c161c;
   display: flex;
   justify-content: space-around;
@@ -29,9 +32,9 @@
     cursor: pointer;
   }
   &__title {
-    font-size: 30px;
-    font-family: "arial black";
     &__link {
+      font-size: 30px;
+      font-weight: bold;
       text-decoration: none;
       color: #f9fafa;
     }
@@ -39,7 +42,7 @@
   &__search {
     display: flex;
     &--btns {
-      padding-top: 15px;
+      padding-top: 10px;
     }
     &--form {
       i.fa.fa-search {
@@ -85,13 +88,20 @@ i.fas.fa-plus {
   flex: 1;
   height: 100vh;
   display: flex;
+  background-color: #222222;
+  position: relative;
+  left: 0;
+  overflow-x: hidden;
 }
 
 .side-bar {
   height: 100%;
-  width: 18%;
-  background-color: #222222;
-  overflow: scroll;
+  width: 250px;
+  position: relative;
+  position: fixed;
+  top: 0;
+  left: -240px;
+  background-color: #0c161c;
   .genre-name {
     &__edit {
       font-size: 15px;
@@ -114,22 +124,12 @@ i.fas.fa-plus {
     text-decoration: none;
     margin: 20px;
   }
-  .form-box {
-    margin: 10px;
-    &__contents__title {
-      border: 1px solid gray;
-      border-radius: 4px;
-      padding-left: 5px;
-    }
-    &__new-memo {
-      border-radius: 4px;
-      border: 1px solid gray;
-      background-color: #0c161c;
-      color: #f9fafa;
-      cursor: pointer;
-      outline: none;
-    }
-  }
+}
+
+.side-bar-top {
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
 }
 
 .mic-btn {
@@ -151,13 +151,6 @@ i.fas.fa-plus {
   display: block;
 }
 
-.menu-container {
-  height: 100%;
-  width: 100%;
-  background-color: #0c161c;
-  border-top: 1px solid #aaaaaa;
-  border-bottom: 1px solid #aaaaaa;
-}
 .menu-list li {
   color: #f9fafa;
   padding: 10px 20px;
@@ -212,14 +205,13 @@ i.fas.fa-plus {
 }
 
 .main-body {
-  height: 100%;
-  width: 82%;
-  overflow: scroll;
+  height: calc(100% - 160px);
+  width: 100%;
   background-color: #222222;
 
   .explanation-text {
     width: 60%;
-    margin: 50px 80px;
+    margin: 50px auto;
     color: red;
     text-align: center;
   }
@@ -228,44 +220,71 @@ i.fas.fa-plus {
     color: #f9fafa;
   }
 
+  #switch-btn {
+    outline: none;
+    display: block;
+    margin: 0 auto;
+    background-color: #f5f5f3;
+  }
+
   .form-box {
-    width: 80%;
-    margin: 50px 100px 50px 200px;
+    width: 40%;
+    margin: 50px auto;
+    border: 1px solid #aaaaaa;
+    position: absolute;
+    top: 150px;
+    left: 25%;
+    background-color: #f5f5f3;
+    display: none;
+    label {
+      color: #555555;
+    }
+
     #title-btn {
       margin-bottom: 10px;
     }
-
-    &__genre__name {
-      margin-bottom: 20px;
-      border: 1px solid #222222;
-      border-radius: 4px;
-      padding: 10px;
-    }
     &__contents__title {
+      border: none;
+      outline: none;
+      font-size: 16px;
+      padding: 3px 10px;
+      margin-left: 20px;
       margin-bottom: 20px;
-      border: 1px solid #222222;
-      border-radius: 4px;
-      padding: 10px;
+      border-bottom: 1px solid #aaaaaa;
+      background-color: #f5f5f3;
     }
     &__contents__comment {
+      border: none;
+      outline: none;
+      resize: none;
+      font-size: 16px;
+      padding: 3px 10px;
+      margin-left: 20px;
       margin-bottom: 20px;
-      border: 1px solid #222222;
-      border-radius: 4px;
-      padding: 10px;
+      border-bottom: 1px solid #aaaaaa;
+      background-color: #f5f5f3;
     }
     &__contents__start-time {
+      border: none;
+      outline: none;
+      border-bottom: 1px solid #aaaaaa;
       height: 50px;
-      margin-bottom: 20px;
-      border: 1px solid #222222;
-      border-radius: 4px;
       padding: 5px;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+    #content_start_time_1i {
+      margin-left: 20px;
     }
     &__contents__display {
+      border: none;
+      outline: none;
+      border-bottom: 1px solid #aaaaaa;
       height: 50px;
-      margin-bottom: 20px;
-      border: 1px solid #222222;
-      border-radius: 4px;
       padding: 5px;
+      font-size: 15px;
+      margin-left: 20px;
+      margin-bottom: 20px;
     }
     &__new-memo {
       width: 60px;
@@ -273,7 +292,8 @@ i.fas.fa-plus {
       font-size: 16px;
       border-radius: 8px;
       border: 1px solid gray;
-      margin: 0 auto;
+      margin-left: 20px;
+      margin-bottom: 20px;
       background-color: #0c161c;
       color: #f9fafa;
       cursor: pointer;
@@ -281,9 +301,10 @@ i.fas.fa-plus {
   }
   .contents {
     height: 70%;
-    width: 100%;
+    width: 80%;
     display: flex;
     padding: 20px;
+    margin: 0 auto;
     justify-content: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
@@ -423,30 +444,33 @@ i.fas.fa-plus {
 }
 
 .explanation-info {
-  margin-left: 100px;
+  margin: 0 auto;
   &__text {
     width: 60%;
     text-align: center;
     font-size: 25px;
     font-family: "arial unicode ms";
-    margin: 50px 20px;
+    margin: 50px auto;
     color: #f5f5f3;
   }
   &__img {
     width: 60%;
     text-align: center;
-    margin-bottom: 50px;
+    margin: 50px auto;
   }
   &__image {
     width: 300px;
     height: 300px;
   }
 }
+
 .search-icon {
   width: 10px;
   height: 10px;
 }
+
 .footer {
+  width: 100%;
   height: 80px;
   line-height: 80px;
   text-align: center;

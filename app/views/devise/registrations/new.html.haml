@@ -26,7 +26,7 @@
           %br/
           = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "再度入力"
         .actions
-          = f.submit "新規登録", class: "session-btn"
+          = f.submit "新規登録", class: "session-btn", id: "user-signup"
         = link_to new_user_session_path, class: "session-link" do
           ログインはこちら
             
