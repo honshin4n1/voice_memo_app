@@ -102,6 +102,7 @@ i.fas.fa-plus {
   top: 0;
   left: -250px;
   background-color: #ffa500;
+  overflow: scroll;
   .genre-name {
     &__edit {
       font-size: 15px;
@@ -203,7 +204,7 @@ i.fas.fa-plus {
 }
 
 .main-body {
-  height: calc(100% - 160px);
+  height: 100%;
   width: 100%;
   background-color: #f6f6f4;
 
