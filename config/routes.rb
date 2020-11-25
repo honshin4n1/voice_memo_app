@@ -9,4 +9,7 @@ Rails.application.routes.draw do
     resources :contents, except: [:show]
   end
   resources :users, only: [:show]
+  post '/genres/guest_1_sign_in', to: 'genres#new_guest_1'
+  post '/genres/guest_2_sign_in', to: 'genres#new_guest_2'
+  post '/genres/guest_3_sign_in', to: 'genres#new_guest_3'
 end
