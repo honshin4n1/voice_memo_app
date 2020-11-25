@@ -28,7 +28,7 @@
     %li.menu-list__link
       = link_to "アカウント", '#', class: 'menu-list__link--name'
     %li.menu-list__link
-      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'menu-list__link--name'
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'menu-list__link--name', id:'user-logout'
     %li.menu-list__link
       =link_to "TOP", '#page-top', class: 'menu-list__link--name'
     - if current_user.name == "ゲスト1" || current_user.name == "ゲスト2" || current_user.name == "ゲスト3"
