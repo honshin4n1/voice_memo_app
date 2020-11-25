@@ -31,5 +31,11 @@
       = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'menu-list__link--name'
     %li.menu-list__link
       =link_to "TOP", '#page-top', class: 'menu-list__link--name'
+    - if current_user.name == "ゲスト1" || current_user.name == "ゲスト2" || current_user.name == "ゲスト3"
+      %li.menu-list__link
+        = link_to destroy_user_session_path, method: :delete, class: 'guest-user', id:'guest_user-logout' do
+          ※ゲストユーザーです。
+          %br/
+          ログアウトを忘れずにお願いします。（ログアウト）
   
   
