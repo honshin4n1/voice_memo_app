@@ -44,6 +44,33 @@ class GenresController < ApplicationController
     redirect_to root_path
   end
 
+  def new_guest_1
+    user = User.find_or_create_by!(email: 'guest1@example.com') do |user|
+      user.name = 'ゲスト1'
+      user.password = '0987ju9disi'
+    end
+    sign_in user
+    redirect_to root_path, notice: 'ゲスト1としてログインしました'
+  end
+
+  def new_guest_2
+    user = User.find_or_create_by!(email: 'guest2@example.com') do |user|
+      user.name = 'ゲスト2'
+      user.password = '987dg123'
+    end
+    sign_in user
+    redirect_to root_path, notice: 'ゲスト2としてログインしました'
+  end
+
+  def new_guest_3
+    user = User.find_or_create_by!(email: 'guest3@example.com') do |user|
+      user.name = 'ゲスト3'
+      user.password = '7658dj123'
+    end
+    sign_in user
+    redirect_to root_path, notice: 'ゲスト3としてログインしました'
+  end
+
 
   private
 
