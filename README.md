@@ -45,10 +45,12 @@ Web Speech APIによりChrome環境では音声入力が可能です。
 
 https://www.myvoicememo.com/
 
+ゲストログイン機能を実装しております。
 
-<テストアカウント>   
+~~<テストアカウント>   
  - e-mail: memo@gmail.com  
- - password: 12345678   
+~~- password: 12345678   
+
  ※検索機能やカレンダー表示の動作確認にお使いください。　　
   
 # 開発環境
