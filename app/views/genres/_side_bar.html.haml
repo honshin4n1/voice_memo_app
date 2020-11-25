@@ -22,19 +22,25 @@
       %li.menu-list__info
         MENU
       %li.menu-list__link
-        = link_to root_path, class:   'menu-list__link--name' do
+        = link_to root_path, class: 'menu-list__link--name' do
           = icon('fas', 'home')
           ホーム
       %li.menu-list__link
-        = link_to user_path(current_user.id), class:  'menu-list__link--name' do
+        = link_to user_path(current_user.id), class: 'menu-list__link--name' do
           = icon('fas', 'calendar-alt')
           カレンダー
       %li.menu-list__link
-        = link_to "アカウント", '#', class:   'menu-list__link--name'
+        = link_to "アカウント", '#', class: 'menu-list__link--name'
       %li.menu-list__link
-        = link_to "ログアウト",   destroy_user_session_path, method: :delete,   class: 'menu-list__link--name', id:'user-logout'
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'menu-list__link--name', id:'user-logout'
       %li.menu-list__link
         =link_to "TOP", '#page-top', class:  'menu-list__link--name'
+      - if current_user.name == "ゲスト1" || current_user.name == "ゲスト2" || current_user.name == "ゲスト3"
+        %li.menu-list__link
+          = link_to destroy_user_session_path, method: :delete, class: 'guest-user', id:'guest_user-logout' do
+            ※ゲストユーザーです。
+            %br/
+            ログアウトを忘れずにお願いします。（ログアウト）
   - else
     %ul.menu-list
       %li.menu-list__link
@@ -42,5 +48,10 @@
         = link_to "新規登録",   new_user_registration_path, class:  'menu-list__link--name' 
       %li.menu-list__link
         = link_to "ログイン", new_user_session_path,  class: 'menu-list__link--name' 
-   
+      %li.menu-list__link
+        = link_to "ゲスト1ログイン", genres_guest_1_sign_in_path, method: :post, class: 'menu-list__link--name' 
+      %li.menu-list__link
+        = link_to "ゲスト2ログイン", genres_guest_2_sign_in_path, method: :post, class: 'menu-list__link--name' 
+      %li.menu-list__link
+        = link_to "ゲスト3ログイン", genres_guest_3_sign_in_path, method: :post, class: 'menu-list__link--name' 
 
