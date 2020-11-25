@@ -47,9 +47,9 @@ https://www.myvoicememo.com/
 
 ゲストログイン機能を実装しております。
 
-~~<テストアカウント>   
- - e-mail: memo@gmail.com  
-~~- password: 12345678   
+~~<テストアカウント>~~   
+ ~~- e-mail: memo@gmail.com~~  
+~~- password: 12345678~~   
 
  ※検索機能やカレンダー表示の動作確認にお使いください。　　
   
