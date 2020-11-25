@@ -42,5 +42,10 @@
         = link_to "新規登録",   new_user_registration_path, class:  'menu-list__link--name' 
       %li.menu-list__link
         = link_to "ログイン", new_user_session_path,  class: 'menu-list__link--name' 
-   
+      %li.menu-list__link
+        = link_to "ゲスト1ログイン", genres_guest_1_sign_in_path, method: :post, class: 'menu-list__link--name' 
+      %li.menu-list__link
+        = link_to "ゲスト2ログイン", genres_guest_2_sign_in_path, method: :post, class: 'menu-list__link--name' 
+      %li.menu-list__link
+        = link_to "ゲスト3ログイン", genres_guest_3_sign_in_path, method: :post, class: 'menu-list__link--name' 
 
