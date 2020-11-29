@@ -1,7 +1,7 @@
 FactoryBot.define do
 
   factory :content do
-    title        {"もののけ姫"}
+    title        { Faker::Movie.title }
     comment      { Faker::Lorem.sentence }
     start_time   { Faker::Time.between(from: DateTime.now - 2, to: DateTime.now) }
     display      {0}
