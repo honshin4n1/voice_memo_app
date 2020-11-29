@@ -1,7 +1,7 @@
 FactoryBot.define do
 
   factory :genre do
-    name        {"映画"}
+    name        {Faker::Movie.title}
     association :user
   end
 
