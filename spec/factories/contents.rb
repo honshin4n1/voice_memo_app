@@ -1,11 +1,11 @@
 FactoryBot.define do
 
   factory :content do
-    id           {1}
-    title        {"もののけ姫"}
-    comment      {"面白い"}
-    start_time   {"2020-06-25 08:30:00"}
+    title        { Faker::Movie.title }
+    comment      { Faker::Lorem.sentence }
+    start_time   { Faker::Time.between(from: DateTime.now - 2, to: DateTime.now) }
     display      {0}
+    created_at   { Faker::Time.between(from: DateTime.now - 2, to: DateTime.now) }
     association :genre
     association :user
   end
