@@ -46,6 +46,7 @@ class GenresController < ApplicationController
 
   def new_guest_1
     user = User.find_or_create_by!(email: 'guest1@example.com') do |user|
+      user.id = 9
       user.name = 'ゲスト1'
       user.password = '0987ju9disi'
     end
@@ -55,6 +56,7 @@ class GenresController < ApplicationController
 
   def new_guest_2
     user = User.find_or_create_by!(email: 'guest2@example.com') do |user|
+      user.id = 10
       user.name = 'ゲスト2'
       user.password = '987dg123'
     end
@@ -64,6 +66,7 @@ class GenresController < ApplicationController
 
   def new_guest_3
     user = User.find_or_create_by!(email: 'guest3@example.com') do |user|
+      user.id = 8
       user.name = 'ゲスト3'
       user.password = '7658dj123'
     end
