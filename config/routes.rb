@@ -5,11 +5,13 @@ Rails.application.routes.draw do
   namespace :contents do
     resources :searches, only: :index
   end
-  resources :genres, except: [:show] do
-    resources :contents, except: [:show]
+  resources :genres, except: :show do
+    resources :contents, except: :show
   end
-  resources :users, only: [:show]
+  resources :users, only: :show, param: :name
   post '/genres/guest_1_sign_in', to: 'genres#new_guest_1'
   post '/genres/guest_2_sign_in', to: 'genres#new_guest_2'
   post '/genres/guest_3_sign_in', to: 'genres#new_guest_3'
+  get '/mypage' => 'users#mypage'
+  get '/:name' => 'users#show' 
 end
