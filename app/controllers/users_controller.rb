@@ -1,9 +1,4 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:mypage]
-  def mypage
-    redirect_to "/#{current_user.name}"
-  end
-
   def show
     @genre = Genre.new
     @genres = current_user&.genres

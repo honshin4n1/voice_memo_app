@@ -26,7 +26,7 @@
           = icon('fas', 'home')
           ホーム
       %li.menu-list__link
-        = link_to mypage_path(current_user.name), class: 'menu-list__link--name' do
+        = link_to user_path(current_user.name), class: 'menu-list__link--name' do
           = icon('fas', 'calendar-alt')
           カレンダー
       %li.menu-list__link

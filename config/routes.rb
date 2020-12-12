@@ -8,10 +8,8 @@ Rails.application.routes.draw do
   resources :genres, except: :show do
     resources :contents, except: :show
   end
-  resources :users, only: :show, param: :name
+  resources :users, only: :show, path: '/', param: :name
   post '/genres/guest_1_sign_in', to: 'genres#new_guest_1'
   post '/genres/guest_2_sign_in', to: 'genres#new_guest_2'
   post '/genres/guest_3_sign_in', to: 'genres#new_guest_3'
-  get '/mypage' => 'users#mypage'
-  get '/:name' => 'users#show' 
 end
