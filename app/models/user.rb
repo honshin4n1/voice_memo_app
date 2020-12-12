@@ -8,4 +8,7 @@ class User < ApplicationRecord
   has_many :genres, dependent: :destroy
   has_many :contents, dependent: :destroy
 
+  def to_param
+    name
+  end
 end
