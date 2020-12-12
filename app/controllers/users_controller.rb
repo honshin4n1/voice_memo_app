@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def mypage
+    redirect_to "/#{current_user.name}"
+  end
+
   def show
     @genre = Genre.new
     @genres = current_user&.genres
