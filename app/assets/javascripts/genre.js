@@ -45,7 +45,7 @@ $(function () {
   function buildHTML(genre) {
     var html = `
     <li class="genre-list__link">
-    <a class="genre-list__link--name" href="/genres/${genre.id}/contents">${genre.name}</a>
+    <a class="genre-list__link--name" href="/genres/${genre.name}/contents">${genre.name}</a>
     </li> `;
     return html;
   }

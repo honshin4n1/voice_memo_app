@@ -8,7 +8,7 @@
         = @genre.name
         = link_to edit_genre_path(@genre), class: 'genre-name__edit', id: 'genre-edit-link' do
           = icon('fas', 'edit')
-        = link_to "/genres/#{@genre.id}", method: :delete, class: 'genre-name__delete', id: "genre-delete-link" do
+        = link_to "/genres/#{@genre.name}", method: :delete, class: 'genre-name__delete', id: "genre-delete-link" do
           = icon('far', 'trash-alt')
     - @genres.each do |genre|
       -if @genre != genre

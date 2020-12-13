@@ -1,5 +1,4 @@
 class GenresController < ApplicationController
-  
   def index
     @genres = current_user&.genres
     @genre = Genre.new
@@ -23,23 +22,23 @@ class GenresController < ApplicationController
 
   def edit
     @content = Content.new
-    @genre = Genre.find(params[:id])
+    @genre = Genre.find_by(name: params[:name])
   end
 
   def update
-    @genre = Genre.find(params[:id])
+    @genre = Genre.find_by(name: params[:name])
     if @genre.update(genre_params)
       redirect_to genre_contents_path(@genre), notice: '更新しました'
     else
       @content = Content.new
-      @genre = Genre.find(params[:id])
+      @genre = Genre.find_by(name: params[:name])
       flash.now[:alert] = '入力に誤りがあります'
       render :edit
     end
   end
 
   def destroy
-    @genre = Genre.find(params[:id])
+    @genre = Genre.find_by(name: params[:name])
     @genre.destroy
     redirect_to root_path
   end
@@ -80,6 +79,5 @@ class GenresController < ApplicationController
   def genre_params
     params.require(:genre).permit(:name).merge(user_id: current_user.id)
   end
-
 end
 

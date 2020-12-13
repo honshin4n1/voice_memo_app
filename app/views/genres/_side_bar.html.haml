@@ -17,7 +17,7 @@
             = icon('fas', 'plus')
       - @genres.each do |genre|
         %li.genre-list__link
-          = link_to "#{genre.name}", genre_contents_path(genre.name), class: 'genre-list__link--name'
+          = link_to "#{genre.name}", genre_contents_path(genre), class: 'genre-list__link--name'
     %ul.menu-list
       %li.menu-list__info
         MENU
