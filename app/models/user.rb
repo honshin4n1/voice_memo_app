@@ -7,5 +7,4 @@ class User < ApplicationRecord
          validates :email, presence: true, uniqueness: true, format: { with: /\A[\x21-\x3f\x41-\x7e]+@(?:[-a-z0-9]+\.)+[a-z]{2,}\z/i }
   has_many :genres, dependent: :destroy
   has_many :contents, dependent: :destroy
-
 end
