@@ -3,4 +3,7 @@ class Genre < ApplicationRecord
   belongs_to :user
   validates :name, presence: true, uniqueness: { scope: :user_id }
 
+  def to_param
+    name
+  end
 end

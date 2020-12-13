@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :contents do
     resources :searches, only: :index
   end
-  resources :genres, except: :show do
+  resources :genres, except: :show, param: :name do
     resources :contents, except: :show
   end
   get 'mypage', to: 'users#show'
