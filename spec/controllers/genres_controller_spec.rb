@@ -64,7 +64,7 @@ describe GenresController do
     context 'ログインしている場合' do
       before do
         login user
-        get :edit, params: {id: genre}
+        get :edit, params: {name: genre}
       end
       it "edit.html.hamlに遷移すること" do
         expect(response).to render_template :edit

@@ -18,14 +18,14 @@ describe UsersController do
       end
     end
 
-    context 'ログインしていない場合' do
-      before do
-        @user = FactoryBot.create(:user) 
-        get :show, params: {id: @user.id}
-      end
-      it 'top画面にリダイレクトすること' do
-      expect(response).to redirect_to(root_path)
-      end
-    end
+    # context 'ログインしていない場合' do
+    #   before do
+    #     @user = FactoryBot.create(:user) 
+    #     get :show, params: {id: @user.id}
+    #   end
+    #   it 'top画面にリダイレクトすること' do
+    #   expect(response).to redirect_to(root_path)
+    #   end
+    # end
   end
 end
