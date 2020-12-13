@@ -38,7 +38,6 @@ describe GenresController do
       end
       context '保存に成功した場合'do
         subject {post :create, params: params}
-
         it 'genreを保存すること' do
           expect{ subject }.to change(Genre, :count).by(1)
         end
